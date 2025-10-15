@@ -44,6 +44,17 @@ public class PlayfabManager : MonoBehaviour
         };
         PlayFabClientAPI.LoginWithPlayFab(request, OnLoginSuccess, OnError);
     }
+    
+    public void Login(string username)
+    {
+        Debug.Log(username);
+        // var request = new LoginWithPlayFabRequest
+        // {
+        //     Username = username,
+        //     Password = passwordInput.text
+        // };
+        // PlayFabClientAPI.LoginWithPlayFab(request, OnLoginSuccess, OnError);
+    }
 
     void OnLoginSuccess(LoginResult result)
     {
