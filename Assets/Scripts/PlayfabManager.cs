@@ -7,50 +7,78 @@ using TMPro;
 
 public class PlayfabManager : MonoBehaviour
 {
-    [Header("UI")]
-    public TextMeshProUGUI messageText;
-    public TextMeshProUGUI consoleMessage;
-    public TMP_InputField usernameInput;
-    public TMP_InputField passwordInput;
-    public Button registerButton;
+    public TextMeshProUGUI consoleMessageLogin;
+    public TextMeshProUGUI consoleMessageRegister;
+    public TextMeshProUGUI consoleRegisterMessage;
+    
+    // [Header("UI")]
+    // public TextMeshProUGUI messageText;
+    // public TMP_InputField usernameInput;
+    // public TMP_InputField passwordInput;
+    // public Button registerButton;
 
-    public void RegisterButton()
+    // public void RegisterButton()
+    // {
+    //     if (passwordInput.text.Length < 8)
+    //     {
+    //         messageText.text = "Password must be at least 8 characters long.";
+    //         return;
+    //     }
+
+    //     var request = new RegisterPlayFabUserRequest
+    //     {
+    //         Username = usernameInput.text,
+    //         Password = passwordInput.text,
+    //         RequireBothUsernameAndEmail = false
+    //     };
+    //     PlayFabClientAPI.RegisterPlayFabUser(request, OnRegisterSuccess, OnError);
+    // }
+
+    // void OnRegisterSuccess(RegisterPlayFabUserResult result)
+    // {
+    //     Debug.Log("Registration successful.");
+    //     messageText.text = "Registration successful.";
+    // }
+
+    // public void LoginButton()
+    // {
+    //     var request = new LoginWithPlayFabRequest
+    //         {
+    //         Username = usernameInput.text,
+    //         Password = passwordInput.text
+    //     };
+    //     PlayFabClientAPI.LoginWithPlayFab(request, OnLoginSuccess, OnError);
+    // }
+
+    // void OnLoginSuccess(LoginResult result)
+    // {
+    //     Debug.Log("Login successful.");
+    //     messageText.text = "Login successful.";
+    // }
+
+    // void OnError(PlayFabError error)
+    // {
+    //     messageText.text = error.ErrorMessage;
+    //     Debug.Log("Error: " + error.GenerateErrorReport());
+    // }
+    
+    public void Register(string username, string password, System.Action<bool> onComplete = null)
     {
-        if (passwordInput.text.Length < 8)
-        {
-            messageText.text = "Password must be at least 8 characters long.";
-            return;
-        }
-
+        Debug.Log(username);
         var request = new RegisterPlayFabUserRequest
         {
-            Username = usernameInput.text,
-            Password = passwordInput.text,
+            Username = username,
+            Password = password,
             RequireBothUsernameAndEmail = false
         };
-        PlayFabClientAPI.RegisterPlayFabUser(request, OnRegisterSuccess, OnError);
+        PlayFabClientAPI.RegisterPlayFabUser(request, 
+            (result) => ConsoleRegisterSuccess(result, onComplete), 
+            (error) => ConsoleRegisterError(error, onComplete));
     }
 
-    void OnRegisterSuccess(RegisterPlayFabUserResult result)
-    {
-        Debug.Log("Registration successful.");
-        messageText.text = "Registration successful.";
-    }
-
-    public void LoginButton()
-    {
-        var request = new LoginWithPlayFabRequest
-            {
-            Username = usernameInput.text,
-            Password = passwordInput.text
-        };
-        PlayFabClientAPI.LoginWithPlayFab(request, OnLoginSuccess, OnError);
-    }
-    
     public void Login(string username, string password, System.Action<bool> onComplete = null)
     {
         Debug.Log(username);
-        Debug.Log(password);
         var request = new LoginWithPlayFabRequest
         {
             Username = username,
@@ -58,47 +86,41 @@ public class PlayfabManager : MonoBehaviour
         };
         PlayFabClientAPI.LoginWithPlayFab(request, 
             (result) => ConsoleLoginSuccess(result, onComplete), 
-            (error) => ConsoleError(error, onComplete));
-    }
-
-    void OnLoginSuccess(LoginResult result)
-    {
-        Debug.Log("Login successful.");
-        messageText.text = "Login successful.";
-    }
-
-    void ConsoleLoginSuccess(LoginResult result)
-    {
-        Debug.Log("Login successful.");
-        consoleMessage.text = "Login successful.";
+            (error) => ConsoleLoginError(error, onComplete));
     }
 
     void ConsoleLoginSuccess(LoginResult result, System.Action<bool> onComplete)
     {
         Debug.Log("Login successful.");
-        consoleMessage.text = "Login successful.";
-        onComplete?.Invoke(true); // Notify that login succeeded
+        consoleMessageLogin.text = "Login successful.";
+        onComplete?.Invoke(true); // Notify login success
     }
 
-    void OnError(PlayFabError error)
+    void ConsoleRegisterSuccess(RegisterPlayFabUserResult result, System.Action<bool> onComplete)
     {
-        messageText.text = error.ErrorMessage;
-        Debug.Log("Error: " + error.GenerateErrorReport());
+        Debug.Log("Registration successful.");
+        consoleMessageRegister.text = "Registration successful.";
+        onComplete?.Invoke(true); // Notify registration success
     }
 
-    void ConsoleError(PlayFabError error)
+    void ConsoleLoginError(PlayFabError error, System.Action<bool> onComplete)
     {
-        consoleMessage.text = error.ErrorMessage;
+        consoleMessageLogin.text = error.ErrorMessage;
         Debug.Log("Error: " + error.GenerateErrorReport());
-    }
-
-    void ConsoleError(PlayFabError error, System.Action<bool> onComplete)
-    {
-        consoleMessage.text = error.ErrorMessage;
-        Debug.Log("Error: " + error.GenerateErrorReport());
-        onComplete?.Invoke(false); // Notify that login failed
+        onComplete?.Invoke(false); // Notify login failed
     }
     
+    void ConsoleRegisterError(PlayFabError error, System.Action<bool> onComplete)
+    {
+        consoleMessageRegister.text = error.ErrorMessage;
+        Debug.Log("Error: " + error.GenerateErrorReport());
+        onComplete?.Invoke(false); // Notify registration failed
+    }
+    
+
+
+
+
     public void StartGame()
     {
         Debug.Log("Starting Game...");
