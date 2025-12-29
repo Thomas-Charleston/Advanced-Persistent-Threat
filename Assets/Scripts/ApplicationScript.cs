@@ -11,6 +11,8 @@ public class ApplicationScript : MonoBehaviour
     public GameObject settings;
     public GameObject documentation;
     public GameObject profile;
+    [SerializeField]
+    private GameObject modifiers;
 
     public void OpenBalance()
     {
@@ -94,6 +96,11 @@ public class ApplicationScript : MonoBehaviour
     public void CloseProfile()
     {
         profile.SetActive(false);
+    }
+
+    public void CloseModifiers()
+    {
+        modifiers.SetActive(false);
     }
     
 }
