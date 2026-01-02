@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 public class ModifierButtonScript : MonoBehaviour
 {
+    // Given default values
     public string mapType = "Bus";
     public string speedType = "Twisted Pair";
     public string travelType = "Circuit Switch";
@@ -40,7 +41,9 @@ public class ModifierButtonScript : MonoBehaviour
     [SerializeField]
     private GameObject meshBg;
 
- 
+    
+    // Use GetComponent once in Start() method instead
+
     public void TwistedPair()
     {
         speedType = "Twisted Pair";
@@ -152,6 +155,6 @@ public class ModifierButtonScript : MonoBehaviour
 
     public void ModifierInfo()
     {
-        Debug.Log("Give info");
+        Debug.Log("Give modifier info");
     }
 }

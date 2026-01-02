@@ -13,6 +13,8 @@ public class ApplicationScript : MonoBehaviour
     public GameObject profile;
     [SerializeField]
     private GameObject modifiers;
+    [SerializeField]
+    private GameObject recruitInfo;
 
     public void OpenBalance()
     {
@@ -33,6 +35,7 @@ public class ApplicationScript : MonoBehaviour
     public void OpenRecruit()
     {
         recruit.SetActive(true);
+        recruitInfo.SetActive(true);
         Debug.Log("Recruit");
     }
 
@@ -76,6 +79,7 @@ public class ApplicationScript : MonoBehaviour
     public void CloseRecruit()
     {
         recruit.SetActive(false);
+        recruitInfo.SetActive(false);
     }
 
     public void CloseVault()

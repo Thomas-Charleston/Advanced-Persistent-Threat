@@ -8,6 +8,7 @@ public class Date : MonoBehaviour
     void Start()
     {
         string month = System.DateTime.UtcNow.ToLocalTime().ToString("MM");
+        // Format date and time
         switch (month)
         {
             case "01":
