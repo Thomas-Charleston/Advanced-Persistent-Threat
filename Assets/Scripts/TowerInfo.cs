@@ -1,6 +1,9 @@
 using System.Collections.Generic;
+using System.Data.Common;
 using System.IO;
+using TMPro;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class TowerInfo : MonoBehaviour
 {
@@ -66,7 +69,7 @@ public class TowerInfo : MonoBehaviour
         }
     }
 
-    void SaveTowerData()
+    public void SaveTowerData()
     {
         TowerData data = new TowerData();
 
@@ -79,4 +82,6 @@ public class TowerInfo : MonoBehaviour
         string json = JsonUtility.ToJson(data, true);
         File.WriteAllText(savePath, json);
     }
+
+
 }
