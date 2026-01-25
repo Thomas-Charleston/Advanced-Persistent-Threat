@@ -265,6 +265,7 @@ GameObject:
   - component: {fileID: 21334895}
   - component: {fileID: 21334897}
   - component: {fileID: 21334896}
+  - component: {fileID: 21334898}
   m_Layer: 5
   m_Name: UIManager
   m_TagString: Untagged
@@ -395,6 +396,20 @@ MonoBehaviour:
   teacherGroup: {fileID: 1010862146}
   redTeamerGroup: {fileID: 1589979336}
   responderGroup: {fileID: 1754684142}
+--- !u!114 &21334898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 21334891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a481befdf8fe92b6d94f85bf23393e0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MoneyDisplay
+  moneyText: {fileID: 1111181088}
+  money: 0
 --- !u!1 &37383646
 GameObject:
   m_ObjectHideFlags: 0
@@ -12724,7 +12739,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d156b074d9b51b43b0a77be8b456b93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UnlockButton
-  towerType: 
+  towerInfoScript: {fileID: 0}
+  tower: Antivirus
 --- !u!114 &1043963548
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12771,8 +12787,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1043963547}
         m_TargetAssemblyTypeName: UnlockButton, Assembly-CSharp
-        m_MethodName: UnlockText
-        m_Mode: 5
+        m_MethodName: UnlockButtonPress
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
