@@ -6,10 +6,14 @@ public class UnlockButton : MonoBehaviour
 {
     private TowerInfo towerInfoScript;
     [SerializeField] private string towerType;
+    private PlayerMoney playerMoneyScript;
+    [SerializeField] private int unlockCost = 100; //default price
+    [SerializeField] private TMP_Text costText;
 
     void Start()
     {
         UnlockText(towerType);
+        costText.text = "Cost: " + System.Convert.ToString(unlockCost);
     }
 
     public void UnlockText(string towerType)
@@ -28,8 +32,13 @@ public class UnlockButton : MonoBehaviour
     public void UnlockButtonPress()
     {
         // change text to unlocked
-        towerInfoScript.towers[towerType] = true;
-        towerInfoScript.SaveTowerData();
+        if (playerMoneyScript.money >= unlockCost &&  towerInfoScript.towers[towerType] != true)
+        {
+            towerInfoScript.towers[towerType] = true;
+            towerInfoScript.SaveTowerData();
+            UnlockText(towerType);
+        }
+
     }
 
 
