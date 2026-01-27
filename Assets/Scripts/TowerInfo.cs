@@ -82,6 +82,4 @@ public class TowerInfo : MonoBehaviour
         string json = JsonUtility.ToJson(data, true);
         File.WriteAllText(savePath, json);
     }
-
-
 }

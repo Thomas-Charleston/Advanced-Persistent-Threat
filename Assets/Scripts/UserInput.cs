@@ -152,7 +152,7 @@ public class UserInput : MonoBehaviour
                         loggedIn = true;
                         followUpText.SetActive(true);
 
-                        // first attempt at code below
+                        //first attempt at code below
                         // followUpHelpCommand.text = $"{username}@APT:~$ Help";
                         // int usernameLength = username.Length;
                         // followUpHelpCommand.text.Substring(usernameLength + 7, 4).color = new Color(1, 1, 1);
