@@ -106,6 +106,11 @@ public class ApplicationScript : MonoBehaviour
     {
         modifiers.SetActive(false);
     }
+
+    public void VaultInfo()
+    {
+        Debug.Log("Give vault info");
+    }
     
 }
 
