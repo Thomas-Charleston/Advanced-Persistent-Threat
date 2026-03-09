@@ -2,10 +2,26 @@ using UnityEngine;
 
 public class GameNav : MonoBehaviour
 {
+    // Singleton pattern for easy access to game state across scripts
+    private static GameNav instance;
+    public static GameNav Instance { get { return instance; } }
+
     public bool isPaused = false;
     private bool fastForward = false;
-    [SerializeField] private int ffMult = 2;
-    public int activeFf = 1;
+    [SerializeField] private float ffMult = 2f;
+    public float activeFf = 1f;
+
+    void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
     public void FastForward()
     {
         if (isPaused)
@@ -15,7 +31,7 @@ public class GameNav : MonoBehaviour
         else if (fastForward)
         {
             fastForward = false;
-            activeFf = 1;
+            activeFf = 1f;
         }
         else
         {
@@ -48,11 +64,11 @@ public class GameNav : MonoBehaviour
 
     public void PlayGame()
     {
-        isPaused = true;
+        isPaused = false;
     }
 
     public void PauseGame()
     {
-        isPaused = false;
+        isPaused = true; // Need  to implement pause functionality
     }
 }
