@@ -58,7 +58,6 @@ public class EnemyMovement : MonoBehaviour
     {
         Vector2 direction = (target.position - transform.position).normalized;
 
-        float effectiveSpeed = speed * GameNav.Instance.activeFf;
-        rb.linearVelocity = direction * effectiveSpeed;
+        rb.linearVelocity = direction * speed;
     }
 }

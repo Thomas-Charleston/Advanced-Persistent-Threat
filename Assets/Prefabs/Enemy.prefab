@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2350588017429933450}
   - component: {fileID: 4371514671378856285}
   - component: {fileID: 8500286016139910880}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -143,7 +143,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyMovement
   rb: {fileID: 8500286016139910880}
   speed: 5
-  gameNav: {fileID: 0}
 --- !u!50 &8500286016139910880
 Rigidbody2D:
   serializedVersion: 5

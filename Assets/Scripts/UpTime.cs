@@ -14,7 +14,7 @@ public class UpTime : MonoBehaviour
 
     void Update()
     {
-        time += Time.deltaTime * GameNav.Instance.activeFf; // Scale time by fast forward multiplier
+        time += Time.deltaTime; // Scale time by fast forward multiplier
         upTimeText.text = time.ToString("F0") + "s";
     }
 }
