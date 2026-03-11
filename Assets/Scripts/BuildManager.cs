@@ -14,4 +14,9 @@ public class BuildManager : MonoBehaviour
     {
         main = this;
     }
+
+    public GameObject GetSelectedTower()
+    {
+        return towerPrefabs[selectedTower];
+    }
 }
