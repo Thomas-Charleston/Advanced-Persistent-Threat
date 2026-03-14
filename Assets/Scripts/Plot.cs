@@ -34,6 +34,8 @@ public class Plot : MonoBehaviour
             return;
         }
 
+        if (BuildManager.main.GetSelectedTower() == null) return; // No tower selected to build
+
         Tower towerToBuild = BuildManager.main.GetSelectedTower();
 
         if (towerToBuild.cost > LevelManager.main.currency)
@@ -46,6 +48,7 @@ public class Plot : MonoBehaviour
 
         towerObj = Instantiate(towerToBuild.prefab, transform.position, Quaternion.identity);
         turret = towerObj.GetComponent<Turret>();
+        BuildManager.main.SetSelectedTower(-1); // Deselect tower after building
     }
 
 }
