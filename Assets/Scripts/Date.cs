@@ -5,7 +5,7 @@ using TMPro;
 public class Date : MonoBehaviour
 {
     public TMP_Text timeDisplay;
-    void Start()
+    void FixedUpdate()
     {
         string month = System.DateTime.UtcNow.ToLocalTime().ToString("MM");
         // Format date and time
@@ -51,7 +51,7 @@ public class Date : MonoBehaviour
                 month = "ERR";
                 break;
         }
-        string time = System.DateTime.UtcNow.ToLocalTime().ToString("dd " + month + " HH:mm");
+        string time = System.DateTime.UtcNow.ToLocalTime().ToString("dd MMM HH:mm");
         timeDisplay.text= time;
     }
 }

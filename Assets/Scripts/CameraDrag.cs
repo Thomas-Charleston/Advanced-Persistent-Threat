@@ -1,0 +1,50 @@
+using UnityEngine;
+using UnityEngine.InputSystem;
+
+public class CameraDrag : MonoBehaviour
+{
+    private Vector3 _origin;
+    private Vector3 _difference;
+
+    private Camera _mainCamera;
+
+    private bool _isDragging;
+
+    // Bounds
+    public float minX = -10f;
+    public float maxX = 10f;
+    public float minY = -10f;
+    public float maxY = 10f;
+
+    public float dragSpeed = 5f;
+
+    private void Awake()
+    {
+        _mainCamera = Camera.main;
+    }
+
+    public void OnDrag(InputAction.CallbackContext ctx)
+    {
+        if (ctx.started) _origin = GetMousePosition;
+        _isDragging = ctx.started || ctx.performed;
+    }
+
+    private void LateUpdate()
+    {
+        if (!_isDragging) return;
+
+        _difference = GetMousePosition - transform.position;
+        Vector3 targetPosition = _origin - _difference;
+
+        // Smoothly interpolate toward target for resistance
+        transform.position = Vector3.Lerp(transform.position, targetPosition, dragSpeed * Time.deltaTime);
+
+        transform.position = new Vector3(
+            Mathf.Clamp(transform.position.x, minX, maxX),
+            Mathf.Clamp(transform.position.y, minY, maxY),
+            transform.position.z // Z unchanged
+        );
+    }
+
+    private Vector3 GetMousePosition => _mainCamera.ScreenToWorldPoint(Mouse.current.position.ReadValue());
+}
