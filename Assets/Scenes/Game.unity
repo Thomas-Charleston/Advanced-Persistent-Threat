@@ -8986,6 +8986,7 @@ GameObject:
   - component: {fileID: 1370785854}
   - component: {fileID: 1370785855}
   - component: {fileID: 1370785856}
+  - component: {fileID: 1370785857}
   m_Layer: 0
   m_Name: LevelManager
   m_TagString: Untagged
@@ -9047,6 +9048,7 @@ MonoBehaviour:
   enemiesPerSecond: 0.5
   timeBetweenWaves: 5
   difficultyScalingFactor: 0.75
+  enemiesPerSecondCap: 10
 --- !u!114 &1370785856
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9066,6 +9068,18 @@ MonoBehaviour:
   - name: Backups
     cost: 50
     prefab: {fileID: 8434750114742307495, guid: 69d5a8039bb39314b84514b8769b6e64, type: 3}
+--- !u!114 &1370785857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1370785849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 355b68ae21edde740bf38f1f1ac9fd3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
 --- !u!1001 &1373500493
 PrefabInstance:
   m_ObjectHideFlags: 0

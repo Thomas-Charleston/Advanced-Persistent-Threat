@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEditor;
 using Unity.VisualScripting;
+using UnityEngine.UI;
 
 public class Turret : MonoBehaviour
 {
@@ -9,14 +10,30 @@ public class Turret : MonoBehaviour
     [SerializeField] private LayerMask enemyMask;
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private Transform firePoint;
+    [SerializeField] private GameObject upgradeUI;
+    [SerializeField] private Button upgradeButton;
 
     [Header("Attributes")]
     [SerializeField] private float targetingRange = 3f;
     [SerializeField] private float roationSpeed = 5f;
     [SerializeField] private float fireRate = 1f;
+    [SerializeField] private int baseUpgradeCost = 10;
+
+    private float bpsBase; // Bullets per second
+    private float targetingRangeBase;
 
     private float timeUntilFire;
     private Transform target;
+
+    private int level = 1;
+
+    void Start()
+    {
+        bpsBase = fireRate;
+        targetingRangeBase = targetingRange;
+
+        upgradeButton.onClick.AddListener(Upgrade);
+    }
 
     void Update()
     {
@@ -72,6 +89,46 @@ public class Turret : MonoBehaviour
 
         Quaternion targetRotation = Quaternion.Euler(0, 0, angle);
         rotationPoint.rotation = Quaternion.Slerp(rotationPoint.rotation, targetRotation, roationSpeed * Time.deltaTime); // Smoothly rotates the turret towards the target
+    }
+
+    public void OpenUpgradeUI()
+    {
+        upgradeUI.SetActive(true);
+    }
+
+    public void CloseUpgradeUI()
+    {
+        upgradeUI.SetActive(false);
+        UIManager.main.SetHoveringState(false);
+    }
+
+    public void Upgrade()
+    {
+        if (CalculateCost() > LevelManager.main.currency) return;
+
+        LevelManager.main.SpendCurrency(CalculateCost());
+
+        level++;
+
+        fireRate = CalculateFireRate();
+        targetingRange = CalculateRange();
+
+        CloseUpgradeUI();
+    }
+
+    private int CalculateCost()
+    {
+        return Mathf.RoundToInt(baseUpgradeCost * Mathf.Pow(level, 0.8f));
+    }
+
+    private float CalculateFireRate()
+    {
+        return bpsBase * Mathf.Pow(level, 0.6f);
+    }
+
+    private float CalculateRange()
+    {
+        return targetingRangeBase * Mathf.Pow(level, 0.4f);
     }
 
     void OnDrawGizmosSelected()
