@@ -13,11 +13,13 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private float enemiesPerSecond = 0.5f;
     [SerializeField] private float timeBetweenWaves = 3f;
     [SerializeField] private float difficultyScalingFactor = 0.75f;
+    [SerializeField] private float enemiesPerSecondCap = 10f;
 
     [Header("Events")]
     public static UnityEvent onEnemyDestroy = new UnityEvent();
 
     private int currentWave = 1;
+    private float eps; // Enemies per second
     private float timeSinceLastSpawn;
     private int  enemiesAlive;
     private int enemiesLeftToSpawn;
@@ -40,7 +42,7 @@ public class EnemySpawner : MonoBehaviour
 
         timeSinceLastSpawn += Time.deltaTime;
         
-        if (timeSinceLastSpawn >= (1f / enemiesPerSecond) && enemiesLeftToSpawn > 0)
+        if (timeSinceLastSpawn >= (1f / eps) && enemiesLeftToSpawn > 0)
         {
             SpawnEnemy();
             enemiesLeftToSpawn--;
@@ -59,6 +61,7 @@ public class EnemySpawner : MonoBehaviour
         yield return new WaitForSeconds(timeBetweenWaves);
         isSpawning = true;
         enemiesLeftToSpawn = EnemiesPerWave();
+        eps = EnemiesPerSecond();
     }
 
     private void SpawnEnemy()
@@ -83,6 +86,11 @@ public class EnemySpawner : MonoBehaviour
         timeSinceLastSpawn = 0f;
         currentWave++;
         StartCoroutine(StartWave());
+    }
+
+    private float EnemiesPerSecond()
+    {
+        return Mathf.Clamp(enemiesPerSecond * Mathf.Pow(currentWave, difficultyScalingFactor), 0f, enemiesPerSecondCap);
     }
 
 }

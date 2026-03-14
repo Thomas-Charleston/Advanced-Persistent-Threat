@@ -13,6 +13,6 @@ public class Currency : MonoBehaviour
 
     public void SetSelected()
     {
-
+        
     }
 }
