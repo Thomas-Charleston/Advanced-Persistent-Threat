@@ -12,6 +12,7 @@ public class Turret : MonoBehaviour
     [SerializeField] private Transform firePoint;
     [SerializeField] private GameObject upgradeUI;
     [SerializeField] private Button upgradeButton;
+    [SerializeField] private GameObject rangeIndicator;
 
     [Header("Attributes")]
     [SerializeField] private float targetingRange = 3f;
@@ -94,11 +95,35 @@ public class Turret : MonoBehaviour
     public void OpenUpgradeUI()
     {
         upgradeUI.SetActive(true);
+        if (rangeIndicator != null)
+        {
+            rangeIndicator.SetActive(true);
+            DrawRangeCircle();
+        }
+    }
+
+    private void DrawRangeCircle()
+    {
+        int segments = 50;
+        float angle = 0f;
+        float angleStep = 360f / segments;
+        Vector3[] points = new Vector3[segments + 1];
+        for (int i = 0; i <= segments; i++)
+        {
+            float x = Mathf.Cos(angle * Mathf.Deg2Rad) * targetingRange;
+            float y = Mathf.Sin(angle * Mathf.Deg2Rad) * targetingRange;
+            points[i] = transform.position + new Vector3(x, y, 0);
+            angle += angleStep;
+        }
+        LineRenderer lr = rangeIndicator.GetComponent<LineRenderer>();
+        lr.positionCount = segments + 1;
+        lr.SetPositions(points);
     }
 
     public void CloseUpgradeUI()
     {
         upgradeUI.SetActive(false);
+        rangeIndicator.SetActive(false);
         UIManager.main.SetHoveringState(false);
     }
 

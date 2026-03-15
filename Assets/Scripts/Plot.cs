@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class Plot : MonoBehaviour
 {
@@ -24,9 +25,9 @@ public class Plot : MonoBehaviour
             sr.color = startColor;
         }
 
-    private void OnMouseDown()
+    public void OnMouseDown()
     {
-        if (UIManager.main.IsHoveringUI()) return; // Cannot interact with the plot if the mouse is currently hovering over a UI element
+        if (EventSystem.current.IsPointerOverGameObject()) return; // Cannot interact with the plot if the mouse is currently hovering over a UI element
 
         if (towerObj != null)
         {
