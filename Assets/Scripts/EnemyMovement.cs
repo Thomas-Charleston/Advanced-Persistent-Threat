@@ -7,6 +7,7 @@ public class EnemyMovement : MonoBehaviour
 
     [Header("Attributes")]
     [SerializeField] private float speed = 1f;
+    [SerializeField] private int reputationDamage = 5;
 
     private Transform target;
     private int pathIndex = 0;
@@ -45,6 +46,7 @@ public class EnemyMovement : MonoBehaviour
             {
                 EnemySpawner.onEnemyDestroy.Invoke();
                 Destroy(gameObject);
+                LevelManager.main.DecreaseReputation(reputationDamage);
                 return;
             }
             else

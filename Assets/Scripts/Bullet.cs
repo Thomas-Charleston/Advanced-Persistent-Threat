@@ -14,17 +14,19 @@ public class Bullet : MonoBehaviour
     public void SetTarget(Transform _target)
     {
         target = _target;
+        rb.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
     }
 
     void FixedUpdate()
     {
-        if(!target) return;
+        if(!target || !target.gameObject.activeInHierarchy) return;
         Vector2 direction = (target.position - transform.position).normalized;
         rb.linearVelocity = direction * bulletSpeed;
     }
 
-    private void OnCollisionEnter2D(Collision2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
+        Debug.Log("Bullet hit");
         other.gameObject.GetComponent<Health>().TakeDamage(bulletDamage);
         Destroy(gameObject);
     }

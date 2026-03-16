@@ -1,14 +1,19 @@
 using PlayFab.ClientModels;
+using TMPro;
 using UnityEngine;
 
 public class LevelManager : MonoBehaviour
 {
+    [Header("Attributes")]
+    [SerializeField] private TMP_Text reputationText;
+
     public static LevelManager main;
 
     public Transform startPoint;
     public Transform[] path;
 
     public int currency;
+    public int reputation;
 
     private void Awake()
     {
@@ -18,6 +23,8 @@ public class LevelManager : MonoBehaviour
     void Start()
     {
         currency = 50;
+        reputation = 100;
+        reputationText.text = reputation.ToString() + "/100";
     }
 
     public void IncreaseCurrency(int amount)
@@ -40,5 +47,22 @@ public class LevelManager : MonoBehaviour
         }
     }
 
+    public void DecreaseReputation(int amount)
+    {
+        if (reputation > amount)
+        {
+            reputation -= amount;
+        }
+        else
+        {
+            reputation = 0;
+            GameOver();
+        }
+        reputationText.text = reputation.ToString() + "/100";
+    }
 
+    public void GameOver()
+    {
+        Debug.Log("Game Over");
+    }
 }

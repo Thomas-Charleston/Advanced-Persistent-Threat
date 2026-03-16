@@ -9329,6 +9329,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95c3e99e5d6f0d740bd622dbb2d6fee0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelManager
+  reputationText: {fileID: 1947269738}
   startPoint: {fileID: 486695288}
   path:
   - {fileID: 486695288}
@@ -9338,6 +9339,7 @@ MonoBehaviour:
   - {fileID: 768758543}
   - {fileID: 122728723}
   currency: 0
+  reputation: 0
 --- !u!114 &1370785855
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13179,7 +13181,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -762.35046, y: 512.6365}
+  m_AnchoredPosition: {x: -757.5, y: 512.6365}
   m_SizeDelta: {x: 200, y: 36}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1947269738
