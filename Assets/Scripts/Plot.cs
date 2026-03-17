@@ -6,6 +6,7 @@ public class Plot : MonoBehaviour
     [Header("References")]
     [SerializeField] private SpriteRenderer sr;
     [SerializeField] private Color hoverColor;
+    
     public GameObject towerObj;
     public Turret turret;
     private Color startColor;

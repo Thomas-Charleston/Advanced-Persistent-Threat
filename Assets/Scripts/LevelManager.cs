@@ -1,3 +1,4 @@
+using System.Collections;
 using PlayFab.ClientModels;
 using TMPro;
 using UnityEngine;
@@ -6,6 +7,8 @@ public class LevelManager : MonoBehaviour
 {
     [Header("Attributes")]
     [SerializeField] private TMP_Text reputationText;
+    [SerializeField] private GameObject gameOverBg;
+    [SerializeField] private GameObject gameOverScreen;
 
     public static LevelManager main;
 
@@ -64,5 +67,14 @@ public class LevelManager : MonoBehaviour
     public void GameOver()
     {
         Debug.Log("Game Over");
+        Time.timeScale = 0f;
+        gameOverBg.SetActive(true);
+        StartCoroutine(ShowGameOverScreen());
+    }
+
+    IEnumerator ShowGameOverScreen()
+    {
+        yield return new WaitForSecondsRealtime(1f);
+        gameOverScreen.SetActive(true);
     }
 }

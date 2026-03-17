@@ -115,7 +115,7 @@ public class GameNav : MonoBehaviour
 
     public void PauseGame()
     {
-        isPaused = true; // Need  to implement pause functionality
+        isPaused = true;
         fastForward = false;
         activeFf = 0f;
         Time.timeScale = 0f;

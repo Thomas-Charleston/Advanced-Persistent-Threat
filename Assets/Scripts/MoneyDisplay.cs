@@ -7,8 +7,20 @@ public class MoneyDisplay : MonoBehaviour
     [SerializeField] private TMP_Text moneyText;
     public int money;
     private string savePath;
+    private static MoneyDisplay instance;
+    public static MoneyDisplay Instance { get { return instance; } }
     void Awake()
     {
+        if (instance == null) // Singleton logic to be accessed in other scenes
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+
         savePath = Path.Combine(Application.persistentDataPath, "money.json");
 
         if (File.Exists(savePath))

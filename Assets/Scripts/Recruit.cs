@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 public class Recruit : MonoBehaviour
 {
+    [Header("References")]
     [SerializeField]
     private TMP_Text analystSelectText;
     [SerializeField]
