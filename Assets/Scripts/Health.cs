@@ -20,4 +20,10 @@ public class Health : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    public void Initialize(EnemyData data)
+    {
+        hitPoints = data.hitPoints;
+        currencyWorth = data.currencyWorth;
+    }
 }

@@ -62,4 +62,10 @@ public class EnemyMovement : MonoBehaviour
 
         rb.linearVelocity = direction * speed;
     }
+
+    public void Initialize(EnemyData data)
+    {
+        speed = data.speed;
+        reputationDamage = data.reputationDamage;
+    }
 }

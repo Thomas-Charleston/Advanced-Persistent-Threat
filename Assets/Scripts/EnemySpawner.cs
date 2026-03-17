@@ -2,11 +2,20 @@ using System;
 using UnityEngine;
 using UnityEngine.Events;
 using System.Collections;
+using Unity.VisualScripting;
+
+[System.Serializable]
+public class EnemyType
+{
+    public GameObject prefab;
+    public EnemyData data;
+}
 
 public class EnemySpawner : MonoBehaviour
 {
     [Header("References")]
-    [SerializeField] private GameObject[] enemyPrefabs;
+    // [SerializeField] private GameObject[] enemyPrefabs;
+    [SerializeField] private EnemyType[] enemyTypes;
 
     [Header("Attributes")]
     [SerializeField] private int baseEnemies = 8;
@@ -24,6 +33,7 @@ public class EnemySpawner : MonoBehaviour
     private int  enemiesAlive;
     private int enemiesLeftToSpawn;
     private bool isSpawning = false;
+    private int enemiesSpawned;
 
 
     void Awake()
@@ -59,6 +69,7 @@ public class EnemySpawner : MonoBehaviour
     private IEnumerator StartWave()
     {
         yield return new WaitForSeconds(timeBetweenWaves);
+        enemiesSpawned = 0;
         isSpawning = true;
         enemiesLeftToSpawn = EnemiesPerWave();
         eps = EnemiesPerSecond();
@@ -66,8 +77,35 @@ public class EnemySpawner : MonoBehaviour
 
     private void SpawnEnemy()
     {
-        GameObject prefabToSpawn = enemyPrefabs[0];
-        Instantiate(prefabToSpawn, LevelManager.main.startPoint.position, Quaternion.identity);
+        // GameObject prefabToSpawn = enemyPrefabs[0];
+        // Instantiate(prefabToSpawn, LevelManager.main.startPoint.position, Quaternion.identity);
+
+        EnemyType type = GetTypeToSpawn();
+        
+        GameObject obj = Instantiate(type.prefab, LevelManager.main.startPoint.position, Quaternion.identity);
+
+        if (type.data != null)
+        {
+            obj.GetComponent<Health>().Initialize(type.data);
+            obj.GetComponent<EnemyMovement>().Initialize(type.data);
+        }
+    }
+
+    public EnemyType GetTypeToSpawn()
+    {
+        enemiesSpawned++;
+        if ( enemiesSpawned <= 16 )
+        {
+            return enemyTypes[0];
+        }
+        else if ( enemiesSpawned <= 27)
+        {
+            return enemyTypes[1];
+        }
+        else
+        {
+            return enemyTypes[2];
+        }
     }
 
     private int EnemiesPerWave()
@@ -77,7 +115,7 @@ public class EnemySpawner : MonoBehaviour
 
     private void EnemyDestroyed()
     {
-        enemiesAlive--;
+        enemiesAlive = Mathf.Max(0, enemiesAlive - 1);
     }
 
     private void EndWave()
