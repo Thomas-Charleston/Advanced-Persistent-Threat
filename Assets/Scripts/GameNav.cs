@@ -4,18 +4,19 @@ using UnityEngine.UI;
 
 public class GameNav : MonoBehaviour
 {
-    // Singleton pattern for easy access to game state across scripts
-    private static GameNav instance;
     public static GameNav Instance { get { return instance; } }
-
     public bool isPaused = false;
-    private bool fastForward = false;
-    [SerializeField] private float ffMult = 2f;
     public float activeFf = 1f;
+
+    [Header("References")]
+    [SerializeField] private float ffMult = 2f;
     [SerializeField] private Image ffImage;
     [SerializeField] private Image pauseImage;
     [SerializeField] private Image consoleImage;
     [SerializeField] private Image settingsImage;
+
+    private bool fastForward = false;
+    private static GameNav instance; // Singleton pattern for easy access to game state across scripts
 
     void Awake()
     {
