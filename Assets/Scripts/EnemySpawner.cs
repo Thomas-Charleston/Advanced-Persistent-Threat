@@ -94,16 +94,17 @@ public class EnemySpawner : MonoBehaviour
     public EnemyType GetTypeToSpawn()
     {
         enemiesSpawned++;
-        if ( enemiesSpawned <= 16 )
+        if ( enemiesSpawned <= 10 ) // Values likely need adjusting
         {
             return enemyTypes[0];
         }
-        else if ( enemiesSpawned <= 27)
+        else if ( enemiesSpawned <= 20)
         {
             return enemyTypes[1];
         }
         else
         {
+            if (enemyTypes[2] == null) return enemyTypes[1]; // Checks if more enemy types exist
             return enemyTypes[2];
         }
     }

@@ -68,4 +68,9 @@ public class EnemyMovement : MonoBehaviour
         speed = data.speed;
         reputationDamage = data.reputationDamage;
     }
+
+    public void SetSpeedMultiplier(float multiplier)
+    {
+        speed *= multiplier;
+    }
 }

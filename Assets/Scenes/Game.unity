@@ -1525,7 +1525,6 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2129620788}
   - {fileID: 1882314414}
   m_Father: {fileID: 1232390966}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -10579,7 +10578,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UpTime
   time: 0
-  gameWinTime: 60
+  gameWinTime: 120
   upTimeText: {fileID: 1137780009}
   gameWinScreen: {fileID: 1949037818}
 --- !u!114 &1214151808
@@ -10773,6 +10772,7 @@ RectTransform:
   - {fileID: 845392043}
   - {fileID: 139561412}
   - {fileID: 1949037819}
+  - {fileID: 2129620788}
   - {fileID: 152991756}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -11774,6 +11774,8 @@ MonoBehaviour:
   enemyTypes:
   - prefab: {fileID: 1740663305531426065, guid: a45dd3c9d2098df47b7687715017e9c3, type: 3}
     data: {fileID: 11400000, guid: 9d7371f7145de864d9b031d72f0a157c, type: 2}
+  - prefab: {fileID: 1740663305531426065, guid: d2bd1241a41621346a6579513aa5c0bd, type: 3}
+    data: {fileID: 11400000, guid: 4aa7eeca45f5e5c489e4096e3d2f26c4, type: 2}
   baseEnemies: 8
   enemiesPerSecond: 0.5
   timeBetweenWaves: 5
@@ -19309,7 +19311,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2129620788
 RectTransform:
   m_ObjectHideFlags: 0
@@ -19317,12 +19319,12 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2129620787}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 152991756}
+  m_Father: {fileID: 1232390966}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}

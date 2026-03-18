@@ -74,7 +74,7 @@ public class LevelManager : MonoBehaviour
 
     IEnumerator ShowGameOverScreen()
     {
-        yield return new WaitForSecondsRealtime(1f);
+        yield return new WaitForSecondsRealtime(3f);
         gameOverScreen.SetActive(true);
     }
 }
