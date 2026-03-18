@@ -13,6 +13,7 @@ public class Turret : MonoBehaviour
     [SerializeField] private GameObject upgradeUI;
     [SerializeField] private Button upgradeButton;
     [SerializeField] private GameObject rangeIndicator;
+    [SerializeField] private TowerAbility[] abilities;
 
     [Header("Attributes")]
     [SerializeField] private float targetingRange = 3f;
@@ -32,6 +33,8 @@ public class Turret : MonoBehaviour
     {
         bpsBase = fireRate;
         targetingRangeBase = targetingRange;
+
+        abilities = GetComponents<TowerAbility>();
 
         upgradeButton.onClick.AddListener(Upgrade);
     }
@@ -65,8 +68,15 @@ public class Turret : MonoBehaviour
     private void Shoot()
     {
         GameObject bulletObj = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
+
         Bullet bulletScript = bulletObj.GetComponent<Bullet>();
         bulletScript.SetTarget(target);
+
+        // Apply abilities
+        foreach (var ability in abilities)
+        {
+            ability.OnShoot(bulletObj, target);
+        }
     }
 
     private bool CheckTargetInRange()

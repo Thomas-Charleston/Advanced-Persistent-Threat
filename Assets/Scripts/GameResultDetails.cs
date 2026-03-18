@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using System;
 
 public class GameResultDetails : MonoBehaviour
 {
@@ -13,14 +14,14 @@ public class GameResultDetails : MonoBehaviour
 
     void Start()
     {
-        uptimeText.text = "Uptime: " + upTimeScript.time.ToString() + "s";
+        uptimeText.text = "Uptime: " + Convert.ToInt16(upTimeScript.time).ToString() + "s";
         modifiersText.text = "Modifiers: " + modifiers.mapType + ", " + modifiers.speedType + ", " + modifiers.travelType + ", " + modifiers.accessType + ", " + modifiers.connectionType + ", PenTest: " + modifiers.penTest.ToString();
         netDataText.text = "Net Data: ";
     }
 
     public void ContinueFromOver()
     {
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene("HomeScreen");
     }
     
 }

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 924a61ea0fcc07a4bbc021afed3b0205, type: 3}
   m_Name: EnemyData
   m_EditorClassIdentifier: Assembly-CSharp::EnemyData
-  hitPoints: 0
-  speed: 0
-  currencyWorth: 0
-  reputationDamage: 0
+  hitPoints: 2
+  speed: 2
+  currencyWorth: 5
+  reputationDamage: 5

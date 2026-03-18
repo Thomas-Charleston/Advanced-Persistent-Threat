@@ -26,9 +26,10 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("Bullet hit");
         other.gameObject.GetComponent<Health>().TakeDamage(bulletDamage);
         Destroy(gameObject);
     }
+
+    public void SetSplash(float radius, int damage) { Debug.Log("Splash bullet"); }
 
 }
