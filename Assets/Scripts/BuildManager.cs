@@ -8,7 +8,7 @@ public class BuildManager : MonoBehaviour
     public static BuildManager main;
 
     [Header("References")]
-    [SerializeField] private Tower[] towers;
+    [SerializeField] private TurretData[] towers;
 
     [Header("Attributes")]
     [SerializeField] private GameObject exitSelect;
@@ -33,7 +33,7 @@ public class BuildManager : MonoBehaviour
         }
     }
 
-    public Tower GetSelectedTower()
+    public TurretData GetSelectedTower()
     {
         if (selectedTower == -1) return null; // No tower selected
         return towers[selectedTower];
@@ -51,7 +51,7 @@ public class BuildManager : MonoBehaviour
         }
         selectedTower = _selectedTower;
 
-        preview = Instantiate(towers[selectedTower].prefabPreview, new Vector3(500, 0, 0), Quaternion.identity); // Spawn preview off of screen
+        preview = Instantiate(towers[selectedTower].previewPrefab, new Vector3(500, 0, 0), Quaternion.identity); // Spawn preview off of screen
         isPlacingTower = true;
         OpenExitSelect();
     }

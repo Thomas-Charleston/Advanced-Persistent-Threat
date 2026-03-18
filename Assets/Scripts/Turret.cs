@@ -161,4 +161,15 @@ public class Turret : MonoBehaviour
         Handles.color = Color.cyan;
         Handles.DrawWireDisc(transform.position, transform.forward, targetingRange); // Draws a circle in scene view to visualise the range
     }
+
+    public void Initialize(TurretData data)
+    {
+        targetingRange = data.range;
+        fireRate = data.fireRate;
+        bulletPrefab = data.bulletPrefab;
+        baseUpgradeCost = data.baseUpgradeCost;
+
+        bpsBase = fireRate;
+        targetingRangeBase = targetingRange;
+    }
 }

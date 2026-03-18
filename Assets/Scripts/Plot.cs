@@ -36,9 +36,9 @@ public class Plot : MonoBehaviour
             return;
         }
 
-        if (BuildManager.main.GetSelectedTower() == null) return; // No tower selected to build
+        TurretData towerToBuild = BuildManager.main.GetSelectedTower();
 
-        Tower towerToBuild = BuildManager.main.GetSelectedTower();
+        if (towerToBuild == null) return; // No tower selected to build
 
         if (towerToBuild.cost > LevelManager.main.currency)
         {
@@ -48,8 +48,18 @@ public class Plot : MonoBehaviour
 
         LevelManager.main.SpendCurrency(towerToBuild.cost);
 
-        towerObj = Instantiate(towerToBuild.prefab, transform.position, Quaternion.identity);
+        towerObj = Instantiate(towerToBuild.prefab, transform.position, Quaternion.identity); // Spawn Tower
         turret = towerObj.GetComponent<Turret>();
+
+        if (turret != null) // Initialize with data
+        {
+            turret.Initialize(towerToBuild);
+        }
+        else
+        {
+            Debug.Log("Turret component missing on prefab");
+        }
+
         BuildManager.main.SetSelectedTower(-1); // Deselect tower after building
     }
 
