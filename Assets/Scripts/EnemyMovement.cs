@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Accessibility;
 
 public class EnemyMovement : MonoBehaviour
 {
@@ -8,8 +9,10 @@ public class EnemyMovement : MonoBehaviour
     [Header("Attributes")]
     [SerializeField] private float speed = 1f;
     [SerializeField] private int reputationDamage = 5;
+    [SerializeField] private int dataDamage = 5;
 
     private Transform target;
+    private EnemyAbility[] abilities;
     private int pathIndex = 0;
 
     void Start()
@@ -34,6 +37,9 @@ public class EnemyMovement : MonoBehaviour
                 _ => speed
             };
         }
+
+        // Cache any attached abilities
+        abilities = GetComponents<EnemyAbility>();
     }
 
     void Update()
@@ -46,7 +52,18 @@ public class EnemyMovement : MonoBehaviour
             {
                 EnemySpawner.onEnemyDestroy.Invoke();
                 Destroy(gameObject);
+
+                if (abilities != null && abilities.Length > 0)
+                {
+                    foreach (var ability in abilities)
+                    {
+                        if (ability != null)
+                            ability.OnReachEnd();
+                    }
+                }
+
                 LevelManager.main.DecreaseReputation(reputationDamage);
+                DataValue.main.AddData(-dataDamage); // Negative because the method is adding
                 return;
             }
             else
@@ -67,6 +84,7 @@ public class EnemyMovement : MonoBehaviour
     {
         speed = data.speed;
         reputationDamage = data.reputationDamage;
+        dataDamage = data.dataDamage;
     }
 
     public void SetSpeedMultiplier(float multiplier)

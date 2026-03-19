@@ -16,3 +16,4 @@ MonoBehaviour:
   speed: 2
   currencyWorth: 5
   reputationDamage: 5
+  dataDamage: 5

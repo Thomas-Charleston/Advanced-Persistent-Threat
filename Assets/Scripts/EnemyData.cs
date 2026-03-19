@@ -7,4 +7,5 @@ public class EnemyData : ScriptableObject // Enemy data asset
     public float speed;
     public int currencyWorth;
     public int reputationDamage;
+    public int dataDamage;
 }

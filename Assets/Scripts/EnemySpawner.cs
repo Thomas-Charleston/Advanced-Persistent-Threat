@@ -23,6 +23,7 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private float timeBetweenWaves = 3f;
     [SerializeField] private float difficultyScalingFactor = 0.75f;
     [SerializeField] private float enemiesPerSecondCap = 10f;
+    [SerializeField] private float normalDataWait = 5f;
 
     [Header("Events")]
     public static UnityEvent onEnemyDestroy = new UnityEvent();
@@ -30,6 +31,7 @@ public class EnemySpawner : MonoBehaviour
     private int currentWave = 1;
     private float eps; // Enemies per second
     private float timeSinceLastSpawn;
+    private float timeSinceLastNormalSpawn;
     private int  enemiesAlive;
     private int enemiesLeftToSpawn;
     private bool isSpawning = false;
@@ -43,11 +45,20 @@ public class EnemySpawner : MonoBehaviour
 
     void Start()
     {
+        timeSinceLastNormalSpawn = 0;
         StartCoroutine(StartWave());
     }
 
     void Update()
     {
+        timeSinceLastNormalSpawn += Time.deltaTime;
+
+        if (timeSinceLastNormalSpawn >= normalDataWait)
+        {
+            SpawnNormalData();
+            timeSinceLastNormalSpawn = 0f;
+        }
+
         if(!isSpawning) return;
 
         timeSinceLastSpawn += Time.deltaTime;
@@ -91,21 +102,25 @@ public class EnemySpawner : MonoBehaviour
         }
     }
 
+    private void SpawnNormalData()
+    {
+        GameObject obj = Instantiate(enemyTypes[0].prefab, LevelManager.main.startPoint.position, Quaternion.identity);
+
+        if (enemyTypes[0].data != null)
+        {
+            obj.GetComponent<EnemyMovement>().Initialize(enemyTypes[0].data);
+        }
+    }
+
     public EnemyType GetTypeToSpawn()
     {
         enemiesSpawned++;
-        if ( enemiesSpawned <= 10 ) // Values likely need adjusting
-        {
-            return enemyTypes[0];
-        }
-        else if ( enemiesSpawned <= 20)
-        {
-            return enemyTypes[1];
-        }
+        if ( enemiesSpawned <= 10 ) return enemyTypes[1]; // Values likely need adjusting
+        else if ( enemiesSpawned <= 20) return enemyTypes[2];
         else
         {
-            if (enemyTypes[2] == null) return enemyTypes[1]; // Checks if more enemy types exist
-            return enemyTypes[2];
+            if (enemyTypes[3] == null) return enemyTypes[2]; // Checks if more enemy types exist
+            return enemyTypes[3];
         }
     }
 
