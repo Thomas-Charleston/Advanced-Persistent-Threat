@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 
@@ -24,19 +25,19 @@ public class DataValue : MonoBehaviour
     {
         if (data < 4)
         {
-            dataValueText.text = data.ToString() + " bits";
+            dataValueText.text = Convert.ToInt16(data).ToString() + " bits";
         }
         else if (data < 8)
         {
-            dataValueText.text = (data/4).ToString() + " nibbles";
+            dataValueText.text = Convert.ToInt16((data/4)).ToString() + " nibbles";
         }
         else if (data < 8000)
         {
-            dataValueText.text = (data/8).ToString() + " Bytes";
+            dataValueText.text = Convert.ToInt16((data/8)).ToString() + " Bytes";
         }
         else
         {
-            dataValueText.text = (data/8000).ToString() + "KB";
+            dataValueText.text = Convert.ToInt16((data/8000)).ToString() + "KB";
         }
     }
 

@@ -9,6 +9,7 @@ public class Health : MonoBehaviour
 
     private bool isDestroyed = false;
     private EnemyAbility[] abilities;
+    private EnemyData data;
 
     void Start()
     {
@@ -43,9 +44,15 @@ public class Health : MonoBehaviour
         }
     }
 
-    public void Initialize(EnemyData data)
+    public void Initialize(EnemyData d)
     {
-        hitPoints = data.hitPoints;
-        currencyWorth = data.currencyWorth;
+        hitPoints = d.hitPoints;
+        currencyWorth = d.currencyWorth;
+        data = d;
+    }
+
+    public bool HasTag(EnemyTag tag)
+    {
+        return (data.tags & tag) != 0;
     }
 }

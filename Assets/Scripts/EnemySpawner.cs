@@ -5,7 +5,7 @@ using System.Collections;
 using Unity.VisualScripting;
 
 [System.Serializable]
-public class EnemyType
+public class EnemyType // ENEMY SPAWN DATA
 {
     public GameObject prefab;
     public EnemyData data;
@@ -115,13 +115,18 @@ public class EnemySpawner : MonoBehaviour
     public EnemyType GetTypeToSpawn()
     {
         enemiesSpawned++;
-        if ( enemiesSpawned <= 10 ) return enemyTypes[1]; // Values likely need adjusting
-        else if ( enemiesSpawned <= 20) return enemyTypes[2];
-        else
-        {
-            if (enemyTypes[3] == null) return enemyTypes[2]; // Checks if more enemy types exist
-            return enemyTypes[3];
-        }
+        if ( enemiesSpawned <= 10-05 ) return enemyTypes[1]; // Values likely need adjusting
+        else if ( enemiesSpawned <= 20-10) return enemyTypes[2];
+        else if (enemiesSpawned <= 30-15) return enemyTypes[3];
+        else if (enemiesSpawned <= 40) return enemyTypes[4];
+        else if (enemiesSpawned <= 50) return enemyTypes[5];
+        else if (enemiesSpawned <= 60) return enemyTypes[6];
+        else if (enemiesSpawned <= 70) return enemyTypes[7];
+        else if (enemiesSpawned <= 80) return enemyTypes[8];
+        else if (enemiesSpawned <= 90) return enemyTypes[9];
+        else if (enemiesSpawned <= 100) return enemyTypes[10];
+        else if (enemyTypes[11] == null) return enemyTypes[10]; // Checks if more enemy types exist
+        return enemyTypes[11];
     }
 
     private int EnemiesPerWave()

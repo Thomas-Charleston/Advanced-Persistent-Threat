@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1c1bc8ad2becea4cab6bbc5caf13d80, type: 3}
+  m_Name: ThreatIntelFeedData
+  m_EditorClassIdentifier: Assembly-CSharp::TurretData
+  towerName: ThreatIntelFeed
+  cost: 30
+  range: 3
+  fireRate: 1
+  bulletPrefab: {fileID: 404108138721791843, guid: eea7d1ea8d140474e947a57cbbc6309b, type: 3}
+  baseUpgradeCost: 10
+  prefab: {fileID: 8434750114742307495, guid: 428a8aead71ac5d43ac3206e48ac3e99, type: 3}
+  previewPrefab: {fileID: 7759037704387113772, guid: a6202667019f1a2429c7962adbcfa024, type: 3}
