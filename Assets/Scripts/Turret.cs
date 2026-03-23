@@ -20,6 +20,7 @@ public class Turret : MonoBehaviour
     [SerializeField] private float roationSpeed = 5f;
     [SerializeField] private float fireRate = 1f;
     [SerializeField] private int baseUpgradeCost = 10;
+    [SerializeField] private EnemyTag canTarget;
 
     private float bpsBase; // Bullets per second
     private float targetingRangeBase;
@@ -90,10 +91,19 @@ public class Turret : MonoBehaviour
     {
         RaycastHit2D[] hits = Physics2D.CircleCastAll(transform.position, targetingRange, (Vector2) transform.position, 0f, enemyMask);
 
-        if (hits.Length > 0)
+        foreach (var hit in hits)
         {
-            target = hits[0].transform;
+            Health health = hit.transform.GetComponent<Health>();
+            if (health == null) continue;
+
+            if (health.HasTag(canTarget))
+            {
+                target = hit.transform;
+                return;
+            }
         }
+        
+        target = null; // Nothing found
     }
 
     private void RotateTowardsTarget()

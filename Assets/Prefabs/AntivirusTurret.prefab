@@ -899,6 +899,7 @@ MonoBehaviour:
   roationSpeed: 5
   fireRate: 1
   baseUpgradeCost: 10
+  canTarget: 3
 --- !u!114 &-2844852006934345621
 MonoBehaviour:
   m_ObjectHideFlags: 0
