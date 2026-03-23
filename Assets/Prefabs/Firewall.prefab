@@ -845,6 +845,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1811954487212115830}
   - component: {fileID: 70101573366746120}
+  - component: {fileID: -5429627980158394003}
   m_Layer: 0
   m_Name: Firewall
   m_TagString: Untagged
@@ -861,7 +862,7 @@ Transform:
   m_GameObject: {fileID: 8434750114742307495}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.92044, y: 0.17770004, z: 0}
+  m_LocalPosition: {x: 1.92044, y: -26.19, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -893,8 +894,22 @@ MonoBehaviour:
   upgradeButton: {fileID: 5607253724324441179}
   rangeIndicator: {fileID: 110256476359527045}
   abilities:
-  - {fileID: 0}
+  - {fileID: -5429627980158394003}
   targetingRange: 3
   roationSpeed: 5
   fireRate: 1
   baseUpgradeCost: 10
+--- !u!114 &-5429627980158394003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8434750114742307495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 629aa6adeb381ca4198ccc1bb4f5395f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TypeDamageAbility
+  effectiveAgainst: 24
+  multiplier: 2

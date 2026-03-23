@@ -72,6 +72,8 @@ public class Turret : MonoBehaviour
         Bullet bulletScript = bulletObj.GetComponent<Bullet>();
         bulletScript.SetTarget(target);
 
+        bulletScript.SetAbilities(abilities);
+
         // Apply abilities
         foreach (var ability in abilities)
         {

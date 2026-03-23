@@ -1,16 +1,18 @@
 using UnityEngine;
 
-public class NewMonoBehaviourScript : MonoBehaviour
+public class TypeDamageAbility : TowerAbility
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public EnemyTag effectiveAgainst;
+    public float multiplier = 2f;
+    
+    public override void OnHit(GameObject enemy, ref float damage)
     {
-        
-    }
+        Health health = enemy.GetComponent<Health>();
+        if (health == null) return;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (health.HasTag(effectiveAgainst))
+        {
+            damage *= multiplier;
+        }
     }
 }
