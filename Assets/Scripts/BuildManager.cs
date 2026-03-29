@@ -8,7 +8,7 @@ public class BuildManager : MonoBehaviour
     public static BuildManager main;
 
     [Header("References")]
-    [SerializeField] private TurretData[] towers;
+    [SerializeField] private GeneralTowerData[] towers;
 
     [Header("Attributes")]
     [SerializeField] private GameObject exitSelect;
@@ -33,7 +33,7 @@ public class BuildManager : MonoBehaviour
         }
     }
 
-    public TurretData GetSelectedTower()
+    public GeneralTowerData GetSelectedTower()
     {
         if (selectedTower == -1) return null; // No tower selected
         return towers[selectedTower];

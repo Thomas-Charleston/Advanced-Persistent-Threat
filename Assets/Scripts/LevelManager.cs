@@ -2,6 +2,7 @@ using System.Collections;
 using PlayFab.ClientModels;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
@@ -76,5 +77,10 @@ public class LevelManager : MonoBehaviour
     {
         yield return new WaitForSecondsRealtime(3f);
         gameOverScreen.SetActive(true);
+    }
+
+    public void Exit()
+    {
+        SceneManager.LoadScene("HomeScreen");
     }
 }

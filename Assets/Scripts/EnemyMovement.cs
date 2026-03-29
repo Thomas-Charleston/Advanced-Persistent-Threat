@@ -8,12 +8,19 @@ public class EnemyMovement : MonoBehaviour
 
     [Header("Attributes")]
     [SerializeField] private float speed = 1f;
+    [SerializeField] private float modifiersSpeed = 1f; // Default value, will be overridden by Modifiers script;
     [SerializeField] private int reputationDamage = 5;
     [SerializeField] private int dataDamage = 5;
+    [SerializeField] Modifiers modifiers;
 
     private Transform target;
     private EnemyAbility[] abilities;
     private int pathIndex = 0;
+
+    void Awake()
+    {
+        modifiers = Object.FindAnyObjectByType<Modifiers>();
+    }
 
     void Start()
     {
@@ -29,7 +36,7 @@ public class EnemyMovement : MonoBehaviour
         // Switch statement to set modifier speed based on ModifierButtonScript settings
         if (ModifierButtonScript.Instance != null)
         {
-            speed = ModifierButtonScript.Instance.speedType switch
+            modifiersSpeed = modifiers.speedType switch
             {
                 "Twisted Pair" => 1f,
                 "Coaxial" => 1.5f,
@@ -77,7 +84,7 @@ public class EnemyMovement : MonoBehaviour
     {
         Vector2 direction = (target.position - transform.position).normalized;
 
-        rb.linearVelocity = direction * speed;
+        rb.linearVelocity = direction * speed * modifiersSpeed; // Apply modifier speed to enemy movement
     }
 
     public void Initialize(EnemyData data)

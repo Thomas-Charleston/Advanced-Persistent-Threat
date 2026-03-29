@@ -9,14 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1c1bc8ad2becea4cab6bbc5caf13d80, type: 3}
-  m_Name: IDSData
-  m_EditorClassIdentifier: Assembly-CSharp::TurretData
-  towerName: IDS
+  m_Script: {fileID: 11500000, guid: a66bf38ce7ce1ed4b918986d8ca0a854, type: 3}
+  m_Name: IdsData
+  m_EditorClassIdentifier: Assembly-CSharp::PassiveData
+  towerName: IntrustionDetectionSystem
   cost: 30
-  range: 3
-  fireRate: 1
-  bulletPrefab: {fileID: 404108138721791843, guid: eea7d1ea8d140474e947a57cbbc6309b, type: 3}
-  baseUpgradeCost: 10
-  prefab: {fileID: 8434750114742307495, guid: 98a6b682403ee84449b22103268984ce, type: 3}
+  baseUpgradeCost: 20
   previewPrefab: {fileID: 7759037704387113772, guid: c025a7a60d01b7345a082a3b80e78f98, type: 3}
+  prefab: {fileID: 8434750114742307495, guid: 98a6b682403ee84449b22103268984ce, type: 3}

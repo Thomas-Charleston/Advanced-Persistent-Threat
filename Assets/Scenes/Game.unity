@@ -7828,13 +7828,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 1370785854}
+        m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
+        m_MethodName: Exit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -8206,7 +8206,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Exit Game
+  m_text: Leave Game
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -15880,15 +15880,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   towers:
   - {fileID: 11400000, guid: df164a59dff6cae49bed31e2bd767f5f, type: 2}
-  - {fileID: 11400000, guid: a6ff6879b0574044299c7ac00d421865, type: 2}
+  - {fileID: 11400000, guid: 3bd4ea381046b544b9e1da6a0dea6ddd, type: 2}
   - {fileID: 11400000, guid: d911f18d3147696478128ef4c994f9be, type: 2}
-  - {fileID: 11400000, guid: 1f9f91bf343263c42bc06c392feea1ff, type: 2}
+  - {fileID: 11400000, guid: d46f52845c83fa045acb7b6030075385, type: 2}
   - {fileID: 11400000, guid: 3c46edda04503294ba11732418b74ec1, type: 2}
   - {fileID: 11400000, guid: 70de8af86497f6240a4e7f0059298a65, type: 2}
-  - {fileID: 11400000, guid: a460212e1b51ee24aaebe6616ae82621, type: 2}
+  - {fileID: 11400000, guid: 0c17bbfc6c7fdab40abc67dc59e98e23, type: 2}
   - {fileID: 11400000, guid: 75493b0556072ef418aec0541342b33b, type: 2}
   - {fileID: 11400000, guid: 361b9193038f319428fb5a8d970bdc18, type: 2}
-  - {fileID: 11400000, guid: c2975a438b9cfa647a69a7f1b40b34a8, type: 2}
+  - {fileID: 11400000, guid: d6fd1437814b9394ba2110cad35e1d74, type: 2}
   - {fileID: 11400000, guid: 772ca6ba4cd36364cb95e8deebd1bd1f, type: 2}
   exitSelect: {fileID: 845392042}
 --- !u!114 &1370785857

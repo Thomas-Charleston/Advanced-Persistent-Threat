@@ -27,11 +27,10 @@ public class Recruit : MonoBehaviour
     void Start()
     {
         hero = PlayerPrefs.GetString("SelectedHero");
-        // Use GetComponent once instead
         analystBorder.GetComponent<Image>().color = new Color32(88, 88, 87, 255);
         if(string.IsNullOrEmpty(hero))
         {
-            SelectAnalyst();
+            SelectAnalyst(); // Make default
         }
         else if(hero == "Analyst")
         {

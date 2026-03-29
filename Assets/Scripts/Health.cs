@@ -10,9 +10,17 @@ public class Health : MonoBehaviour
     private bool isDestroyed = false;
     private EnemyAbility[] abilities;
     private EnemyData data;
+    // private float repDamping;
+    // private TowerAbility[] towerAbilities;
 
     void Start()
     {
+        // repDamping = 1f;
+
+        // towerAbilities = GetComponents<TowerAbility>();
+
+        // foreach (var )
+
         abilities = GetComponents<EnemyAbility>();
 
         foreach (var ability in abilities)
@@ -23,7 +31,7 @@ public class Health : MonoBehaviour
     
     public void TakeDamage(int dmg)
     {
-        hitPoints -= dmg;
+        hitPoints -= Mathf.RoundToInt(dmg ); //* repDamping
 
         foreach (var ability in abilities)
         {

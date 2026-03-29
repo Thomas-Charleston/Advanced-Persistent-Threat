@@ -708,7 +708,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1811954487212115830}
-  - component: {fileID: 70101573366746120}
+  - component: {fileID: 575845115097523049}
   m_Layer: 0
   m_Name: BackupTurret
   m_TagString: Untagged
@@ -735,7 +735,7 @@ Transform:
   - {fileID: 7743296540336938543}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &70101573366746120
+--- !u!114 &575845115097523049
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -744,23 +744,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 8434750114742307495}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad26c60c0ac18eb44b6f0934f0a7998f, type: 3}
+  m_Script: {fileID: 11500000, guid: a1af772e5d33d6d43ae61a9cd0bc8bc7, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: '::'
-  rotationPoint: {fileID: 3044000554515144450}
-  enemyMask:
-    serializedVersion: 2
-    m_Bits: 128
-  bulletPrefab: {fileID: 404108138721791843, guid: eea7d1ea8d140474e947a57cbbc6309b, type: 3}
-  firePoint: {fileID: 7104430132273056164}
+  m_EditorClassIdentifier: Assembly-CSharp::PassiveTower
   upgradeUI: {fileID: 941516804793116287}
   upgradeButton: {fileID: 5554574736658081899}
-  rangeIndicator: {fileID: 2824258042496077405}
-  abilities: []
-  targetingRange: 3
-  roationSpeed: 5
-  fireRate: 1
   baseUpgradeCost: 10
+  rangeIndicator: {fileID: 2824258042496077405}
 --- !u!1 &8961160008866426506
 GameObject:
   m_ObjectHideFlags: 0

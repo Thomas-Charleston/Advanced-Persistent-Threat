@@ -501,8 +501,8 @@ Transform:
   m_GameObject: {fileID: 3035519032441989949}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.03, z: 0}
-  m_LocalScale: {x: 0.12, y: 0.12, z: 0.12}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.055000003, y: 0.055000003, z: 0.055000003}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 3044000554515144450}
@@ -554,7 +554,7 @@ SpriteRenderer:
   m_SortingLayerID: -348922807
   m_SortingLayer: 2
   m_SortingOrder: 1
-  m_Sprite: {fileID: 8778175453553022843, guid: 772477dd85a3c414d96731af5b836855, type: 3}
+  m_Sprite: {fileID: 310327393330710597, guid: 18660fba279a587408a01aaad385dd52, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -674,7 +674,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8315055091587103425
 RectTransform:
   m_ObjectHideFlags: 0
@@ -797,8 +797,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 8966830271460547484}
   - {fileID: 7104430132273056164}
@@ -845,9 +845,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1811954487212115830}
   - component: {fileID: 70101573366746120}
-  - component: {fileID: -5429627980158394003}
   m_Layer: 0
-  m_Name: Firewall
+  m_Name: AnalysisEngine 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -862,7 +861,7 @@ Transform:
   m_GameObject: {fileID: 8434750114742307495}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.92044, y: -26.19, z: 0}
+  m_LocalPosition: {x: 1.92044, y: 0.17770004, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -884,33 +883,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad26c60c0ac18eb44b6f0934f0a7998f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  upgradeUI: {fileID: 7611613077336985331}
-  upgradeButton: {fileID: 5607253724324441179}
-  baseUpgradeCost: 10
   rotationPoint: {fileID: 3044000554515144450}
   enemyMask:
     serializedVersion: 2
     m_Bits: 128
   bulletPrefab: {fileID: 404108138721791843, guid: eea7d1ea8d140474e947a57cbbc6309b, type: 3}
   firePoint: {fileID: 7104430132273056164}
+  upgradeUI: {fileID: 7611613077336985331}
+  upgradeButton: {fileID: 5607253724324441179}
   rangeIndicator: {fileID: 110256476359527045}
   abilities:
-  - {fileID: -5429627980158394003}
+  - {fileID: 0}
   targetingRange: 3
   roationSpeed: 5
   fireRate: 1
-  canTarget: 91
---- !u!114 &-5429627980158394003
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8434750114742307495}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 629aa6adeb381ca4198ccc1bb4f5395f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TypeDamageAbility
-  effectiveAgainst: 8
-  multiplier: 2
+  baseUpgradeCost: 10

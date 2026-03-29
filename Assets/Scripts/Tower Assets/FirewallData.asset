@@ -14,9 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TurretData
   towerName: Firewall
   cost: 30
+  baseUpgradeCost: 10
+  previewPrefab: {fileID: 7759037704387113772, guid: c21724b76909b434c88eb74d6f90fa0c, type: 3}
+  prefab: {fileID: 8434750114742307495, guid: a389e73c336871241b51c3a3983ad8d5, type: 3}
   range: 3
   fireRate: 1
   bulletPrefab: {fileID: 404108138721791843, guid: eea7d1ea8d140474e947a57cbbc6309b, type: 3}
-  baseUpgradeCost: 10
-  prefab: {fileID: 8434750114742307495, guid: a389e73c336871241b51c3a3983ad8d5, type: 3}
-  previewPrefab: {fileID: 7759037704387113772, guid: c21724b76909b434c88eb74d6f90fa0c, type: 3}
+  dmg: 1

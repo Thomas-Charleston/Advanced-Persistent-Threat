@@ -2,24 +2,22 @@ using UnityEngine;
 using UnityEditor;
 using Unity.VisualScripting;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
-public class Turret : MonoBehaviour
+public class Turret : TowerBase
 {
     [Header("References")]
     [SerializeField] private Transform rotationPoint;
     [SerializeField] private LayerMask enemyMask;
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private Transform firePoint;
-    [SerializeField] private GameObject upgradeUI;
-    [SerializeField] private Button upgradeButton;
-    [SerializeField] private GameObject rangeIndicator;
     [SerializeField] private TowerAbility[] abilities;
+    [SerializeField] private int dmg;
 
     [Header("Attributes")]
     [SerializeField] private float targetingRange = 3f;
     [SerializeField] private float roationSpeed = 5f;
     [SerializeField] private float fireRate = 1f;
-    [SerializeField] private int baseUpgradeCost = 10;
     [SerializeField] private EnemyTag canTarget;
 
     private float bpsBase; // Bullets per second
@@ -28,16 +26,15 @@ public class Turret : MonoBehaviour
     private float timeUntilFire;
     private Transform target;
 
-    private int level = 1;
 
-    void Start()
+    protected override void Start()
     {
+        base.Start();
+
         bpsBase = fireRate;
         targetingRangeBase = targetingRange;
 
         abilities = GetComponents<TowerAbility>();
-
-        upgradeButton.onClick.AddListener(Upgrade);
     }
 
     void Update()
@@ -72,6 +69,7 @@ public class Turret : MonoBehaviour
 
         Bullet bulletScript = bulletObj.GetComponent<Bullet>();
         bulletScript.SetTarget(target);
+        bulletScript.bulletDamage = dmg;
 
         bulletScript.SetAbilities(abilities);
 
@@ -114,14 +112,10 @@ public class Turret : MonoBehaviour
         rotationPoint.rotation = Quaternion.Slerp(rotationPoint.rotation, targetRotation, roationSpeed * Time.deltaTime); // Smoothly rotates the turret towards the target
     }
 
-    public void OpenUpgradeUI()
+    public override void OpenUpgradeUI()
     {
-        upgradeUI.SetActive(true);
-        if (rangeIndicator != null)
-        {
-            rangeIndicator.SetActive(true);
-            DrawRangeCircle();
-        }
+        base.OpenUpgradeUI();
+        DrawRangeCircle();
     }
 
     private void DrawRangeCircle()
@@ -142,30 +136,13 @@ public class Turret : MonoBehaviour
         lr.SetPositions(points);
     }
 
-    public void CloseUpgradeUI()
+
+    protected override void OnUpgrade()
     {
-        upgradeUI.SetActive(false);
-        rangeIndicator.SetActive(false);
-        UIManager.main.SetHoveringState(false);
-    }
-
-    public void Upgrade()
-    {
-        if (CalculateCost() > LevelManager.main.currency) return;
-
-        LevelManager.main.SpendCurrency(CalculateCost());
-
-        level++;
-
         fireRate = CalculateFireRate();
         targetingRange = CalculateRange();
 
         CloseUpgradeUI();
-    }
-
-    private int CalculateCost()
-    {
-        return Mathf.RoundToInt(baseUpgradeCost * Mathf.Pow(level, 0.8f));
     }
 
     private float CalculateFireRate()
@@ -184,12 +161,17 @@ public class Turret : MonoBehaviour
         Handles.DrawWireDisc(transform.position, transform.forward, targetingRange); // Draws a circle in scene view to visualise the range
     }
 
-    public void Initialize(TurretData data)
+    public override void Initialize(GeneralTowerData data)
     {
-        targetingRange = data.range;
-        fireRate = data.fireRate;
-        bulletPrefab = data.bulletPrefab;
-        baseUpgradeCost = data.baseUpgradeCost;
+        base.Initialize(data);
+
+        TurretData turretData = (TurretData)data;
+
+        targetingRange = turretData.range;
+        fireRate = turretData.fireRate;
+        bulletPrefab = turretData.bulletPrefab;
+        BaseUpgradeCost = turretData.baseUpgradeCost;
+        dmg = turretData.dmg;
 
         bpsBase = fireRate;
         targetingRangeBase = targetingRange;

@@ -28,7 +28,7 @@ public class MoneyDisplay : MonoBehaviour
             GetMoney();
             Debug.Log("Existing money found in files");
         }
-        else
+        else // player hasn't played before
         {
             money = 0; // start money
             SaveMoney(0);
@@ -43,7 +43,7 @@ public class MoneyDisplay : MonoBehaviour
             string json = File.ReadAllText(savePath);
             PlayerMoney loadedMoney = JsonUtility.FromJson<PlayerMoney>(json);
 
-            if (loadedMoney == null)
+            if (loadedMoney == null) // Player has no money
                 return;
 
             money =  loadedMoney.money;

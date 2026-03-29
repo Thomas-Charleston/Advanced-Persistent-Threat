@@ -14,9 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TurretData
   towerName: Sandbox
   cost: 30
-  range: 3
-  fireRate: 1
-  bulletPrefab: {fileID: 404108138721791843, guid: eea7d1ea8d140474e947a57cbbc6309b, type: 3}
-  baseUpgradeCost: 10
-  prefab: {fileID: 8434750114742307495, guid: 47ed2f6ece0cfc9449068aae16eb0fec, type: 3}
+  baseUpgradeCost: 30
   previewPrefab: {fileID: 7759037704387113772, guid: 7999498cb2fc8124ba9fe3b8c8a6b19a, type: 3}
+  prefab: {fileID: 8434750114742307495, guid: 47ed2f6ece0cfc9449068aae16eb0fec, type: 3}
+  range: 1.5
+  fireRate: 0.3
+  bulletPrefab: {fileID: 404108138721791843, guid: eea7d1ea8d140474e947a57cbbc6309b, type: 3}
+  dmg: 3

@@ -375,7 +375,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 21334895}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ModifierButtonScript, Assembly-CSharp
         m_MethodName: ModifierInfo
         m_Mode: 1
@@ -398,7 +398,6 @@ GameObject:
   - component: {fileID: 21334894}
   - component: {fileID: 21334893}
   - component: {fileID: 21334892}
-  - component: {fileID: 21334895}
   - component: {fileID: 21334897}
   - component: {fileID: 21334896}
   - component: {fileID: 21334898}
@@ -465,38 +464,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &21334895
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 21334891}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f71af0109cac6649aaad1e5e3ad4f6a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ModifierButtonScript
-  mapType: 
-  speedType: 
-  travelType: 
-  accessType: 
-  connectionType: 
-  penTest: 0
-  twistedBg: {fileID: 1636840136}
-  coaxBg: {fileID: 688273196}
-  fibreBg: {fileID: 636428140}
-  circuitBg: {fileID: 869324676}
-  packetBg: {fileID: 617745638}
-  privateBg: {fileID: 1970722215}
-  publicBg: {fileID: 681850134}
-  wiredBg: {fileID: 2039952438}
-  wirelessBg: {fileID: 1798109476}
-  penTestBg: {fileID: 819747287}
-  noPenTestBg: {fileID: 1828592534}
-  busBg: {fileID: 568761416}
-  starBg: {fileID: 390913417}
-  meshBg: {fileID: 970242185}
 --- !u!114 &21334896
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1828,7 +1795,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 21334895}
+      - m_Target: {fileID: 2077658666}
         m_TargetAssemblyTypeName: ModifierButtonScript, Assembly-CSharp
         m_MethodName: FibreOptic
         m_Mode: 1
@@ -2293,7 +2260,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 21334895}
+      - m_Target: {fileID: 2077658666}
         m_TargetAssemblyTypeName: ModifierButtonScript, Assembly-CSharp
         m_MethodName: CircuitSwitch
         m_Mode: 1
@@ -6602,7 +6569,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 21334895}
+      - m_Target: {fileID: 2077658666}
         m_TargetAssemblyTypeName: ModifierButtonScript, Assembly-CSharp
         m_MethodName: Private
         m_Mode: 1
@@ -11974,7 +11941,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 12 Dec 23:09
+  m_text: 16 Dec 23:09
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -13122,7 +13089,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 21334895}
+      - m_Target: {fileID: 2077658666}
         m_TargetAssemblyTypeName: ModifierButtonScript, Assembly-CSharp
         m_MethodName: PenTestOff
         m_Mode: 1
@@ -13390,7 +13357,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 21334895}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ModifierButtonScript, Assembly-CSharp
         m_MethodName: ModifierInfo
         m_Mode: 1
@@ -13938,7 +13905,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 21334895}
+      - m_Target: {fileID: 2077658666}
         m_TargetAssemblyTypeName: ModifierButtonScript, Assembly-CSharp
         m_MethodName: LoadGame
         m_Mode: 1
@@ -19413,7 +19380,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 21334895}
+      - m_Target: {fileID: 2077658666}
         m_TargetAssemblyTypeName: ModifierButtonScript, Assembly-CSharp
         m_MethodName: Star
         m_Mode: 1
@@ -23729,7 +23696,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 21334895}
+      - m_Target: {fileID: 2077658666}
         m_TargetAssemblyTypeName: ModifierButtonScript, Assembly-CSharp
         m_MethodName: PenTestOn
         m_Mode: 1
@@ -24795,7 +24762,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 21334895}
+      - m_Target: {fileID: 2077658666}
         m_TargetAssemblyTypeName: ModifierButtonScript, Assembly-CSharp
         m_MethodName: Wired
         m_Mode: 1
@@ -26591,7 +26558,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 21334895}
+      - m_Target: {fileID: 2077658666}
         m_TargetAssemblyTypeName: ModifierButtonScript, Assembly-CSharp
         m_MethodName: Public
         m_Mode: 1
@@ -27085,7 +27052,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 21334895}
+      - m_Target: {fileID: 2077658666}
         m_TargetAssemblyTypeName: ModifierButtonScript, Assembly-CSharp
         m_MethodName: Mesh
         m_Mode: 1
@@ -27774,7 +27741,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 21334895}
+      - m_Target: {fileID: 2077658666}
         m_TargetAssemblyTypeName: ModifierButtonScript, Assembly-CSharp
         m_MethodName: Wireless
         m_Mode: 1
@@ -33108,7 +33075,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 21334895}
+      - m_Target: {fileID: 2077658666}
         m_TargetAssemblyTypeName: ModifierButtonScript, Assembly-CSharp
         m_MethodName: Coaxial
         m_Mode: 1
@@ -35314,7 +35281,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 21334895}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ModifierButtonScript, Assembly-CSharp
         m_MethodName: ModifierInfo
         m_Mode: 1
@@ -39147,7 +39114,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 21334895}
+      - m_Target: {fileID: 2077658666}
         m_TargetAssemblyTypeName: ModifierButtonScript, Assembly-CSharp
         m_MethodName: Bus
         m_Mode: 1
@@ -41493,7 +41460,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 21334895}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ModifierButtonScript, Assembly-CSharp
         m_MethodName: ModifierInfo
         m_Mode: 1
@@ -43439,7 +43406,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 21334895}
+      - m_Target: {fileID: 2077658666}
         m_TargetAssemblyTypeName: ModifierButtonScript, Assembly-CSharp
         m_MethodName: TwistedPair
         m_Mode: 1
@@ -43601,7 +43568,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1921897648
 RectTransform:
   m_ObjectHideFlags: 0
@@ -47859,6 +47826,70 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2077090154}
   m_CullTransparentMesh: 1
+--- !u!1 &2077658665
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2077658667}
+  - component: {fileID: 2077658666}
+  m_Layer: 0
+  m_Name: ModifierManagerRoot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2077658666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2077658665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f71af0109cac6649aaad1e5e3ad4f6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ModifierButtonScript
+  mapType: 
+  speedType: 
+  travelType: 
+  accessType: 
+  connectionType: 
+  penTest: 0
+  twistedBg: {fileID: 1636840136}
+  coaxBg: {fileID: 688273196}
+  fibreBg: {fileID: 636428140}
+  circuitBg: {fileID: 869324676}
+  packetBg: {fileID: 617745638}
+  privateBg: {fileID: 1970722215}
+  publicBg: {fileID: 681850134}
+  wiredBg: {fileID: 2039952438}
+  wirelessBg: {fileID: 1798109476}
+  penTestBg: {fileID: 819747287}
+  noPenTestBg: {fileID: 1828592534}
+  busBg: {fileID: 568761416}
+  starBg: {fileID: 390913417}
+  meshBg: {fileID: 970242185}
+--- !u!4 &2077658667
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2077658665}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.29708, y: -0.17468, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2078770300
 GameObject:
   m_ObjectHideFlags: 0
@@ -48115,7 +48146,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 21334895}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ModifierButtonScript, Assembly-CSharp
         m_MethodName: ModifierInfo
         m_Mode: 1
@@ -48331,7 +48362,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 21334895}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ModifierButtonScript, Assembly-CSharp
         m_MethodName: ModifierInfo
         m_Mode: 1
@@ -48524,7 +48555,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 21334895}
+      - m_Target: {fileID: 2077658666}
         m_TargetAssemblyTypeName: ModifierButtonScript, Assembly-CSharp
         m_MethodName: PacketSwitch
         m_Mode: 1
@@ -49282,3 +49313,4 @@ SceneRoots:
   - {fileID: 1350922746}
   - {fileID: 230276060}
   - {fileID: 263865120}
+  - {fileID: 2077658667}

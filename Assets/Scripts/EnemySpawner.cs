@@ -59,7 +59,7 @@ public class EnemySpawner : MonoBehaviour
             timeSinceLastNormalSpawn = 0f;
         }
 
-        if(!isSpawning) return;
+        if(!isSpawning) return; // round hasn't started
 
         timeSinceLastSpawn += Time.deltaTime;
         

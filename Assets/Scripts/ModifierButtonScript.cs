@@ -65,16 +65,21 @@ public class ModifierButtonScript : MonoBehaviour
         if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(gameObject);
+            // DontDestroyOnLoad only works on root GameObjects, so traverse to root
+            Transform root = transform.root;
+            DontDestroyOnLoad(root.gameObject);
+            Debug.Log($"ModifierButtonScript Awake: instance set on {gameObject.name}, marked root {root.gameObject.name} as persistent");
         }
         else
         {
+            Debug.LogWarning($"ModifierButtonScript duplicate found at {gameObject.name}, destroying");
             Destroy(gameObject);
         }
     }
 
     void Start()
     {
+        Debug.Log($"ModifierButtonScript Start: instance is {(instance != null ? "valid" : "null")}");
         LoadData();
     }
 
@@ -87,7 +92,6 @@ public class ModifierButtonScript : MonoBehaviour
         fibreBg.GetComponent<Image>().color = new Color32(65, 65, 65, 150);
         if (!isLoading) SaveData();
     }
-
     public void Coaxial()
     {
         speedType = "Coaxial";

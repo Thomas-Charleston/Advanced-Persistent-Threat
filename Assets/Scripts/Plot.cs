@@ -28,17 +28,20 @@ public class Plot : MonoBehaviour
 
     public void OnMouseDown()
     {
-        if (EventSystem.current.IsPointerOverGameObject()) return; // Cannot interact with the plot if the mouse is currently hovering over a UI element
+        if (EventSystem.current.IsPointerOverGameObject()) return;
 
         if (towerObj != null)
         {
-            turret.OpenUpgradeUI();
+            TowerBase existingTower = towerObj.GetComponent<TowerBase>();
+            if (existingTower != null)
+            {
+                existingTower.OpenUpgradeUI();
+            }
             return;
         }
 
-        TurretData towerToBuild = BuildManager.main.GetSelectedTower();
-
-        if (towerToBuild == null) return; // No tower selected to build
+        GeneralTowerData towerToBuild = BuildManager.main.GetSelectedTower();
+        if (towerToBuild == null) return;
 
         if (towerToBuild.cost > LevelManager.main.currency)
         {
@@ -48,19 +51,20 @@ public class Plot : MonoBehaviour
 
         LevelManager.main.SpendCurrency(towerToBuild.cost);
 
-        towerObj = Instantiate(towerToBuild.prefab, transform.position, Quaternion.identity); // Spawn Tower
-        turret = towerObj.GetComponent<Turret>();
+        towerObj = Instantiate(towerToBuild.prefab, transform.position, Quaternion.identity);
 
-        if (turret != null) // Initialize with data
+        TowerBase tower = towerObj.GetComponent<TowerBase>();
+
+        if (tower != null)
         {
-            turret.Initialize(towerToBuild);
+            tower.Initialize(towerToBuild);
         }
         else
         {
-            Debug.Log("Turret component missing on prefab");
+            Debug.LogError("TowerBase missing on prefab");
         }
 
-        BuildManager.main.SetSelectedTower(-1); // Deselect tower after building
+        BuildManager.main.SetSelectedTower(-1);
     }
 
 }

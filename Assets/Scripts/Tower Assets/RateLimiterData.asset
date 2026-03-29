@@ -9,14 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1c1bc8ad2becea4cab6bbc5caf13d80, type: 3}
+  m_Script: {fileID: 11500000, guid: a66bf38ce7ce1ed4b918986d8ca0a854, type: 3}
   m_Name: RateLimiterData
-  m_EditorClassIdentifier: Assembly-CSharp::TurretData
+  m_EditorClassIdentifier: Assembly-CSharp::PassiveData
   towerName: RateLimiter
   cost: 30
-  range: 3
-  fireRate: 1
-  bulletPrefab: {fileID: 404108138721791843, guid: eea7d1ea8d140474e947a57cbbc6309b, type: 3}
-  baseUpgradeCost: 10
-  prefab: {fileID: 8434750114742307495, guid: 01790575ea8b0994eadff38789f919f4, type: 3}
+  baseUpgradeCost: 20
   previewPrefab: {fileID: 7759037704387113772, guid: 2bed26d5cc868584bbc67d6ce9203ba2, type: 3}
+  prefab: {fileID: 8434750114742307495, guid: 01790575ea8b0994eadff38789f919f4, type: 3}
