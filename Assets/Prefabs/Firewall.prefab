@@ -674,7 +674,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8315055091587103425
 RectTransform:
   m_ObjectHideFlags: 0
@@ -887,15 +887,16 @@ MonoBehaviour:
   upgradeUI: {fileID: 7611613077336985331}
   upgradeButton: {fileID: 5607253724324441179}
   baseUpgradeCost: 10
+  rangeIndicator: {fileID: 110256476359527045}
   rotationPoint: {fileID: 3044000554515144450}
   enemyMask:
     serializedVersion: 2
     m_Bits: 128
   bulletPrefab: {fileID: 404108138721791843, guid: eea7d1ea8d140474e947a57cbbc6309b, type: 3}
   firePoint: {fileID: 7104430132273056164}
-  rangeIndicator: {fileID: 110256476359527045}
   abilities:
   - {fileID: -5429627980158394003}
+  dmg: 0
   targetingRange: 3
   roationSpeed: 5
   fireRate: 1

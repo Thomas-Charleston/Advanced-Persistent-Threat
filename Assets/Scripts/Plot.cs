@@ -30,7 +30,7 @@ public class Plot : MonoBehaviour
     {
         if (EventSystem.current.IsPointerOverGameObject()) return;
 
-        if (towerObj != null)
+        if (towerObj != null) // Tower already placed
         {
             TowerBase existingTower = towerObj.GetComponent<TowerBase>();
             if (existingTower != null)
@@ -64,7 +64,7 @@ public class Plot : MonoBehaviour
             Debug.LogError("TowerBase missing on prefab");
         }
 
-        BuildManager.main.SetSelectedTower(-1);
+        BuildManager.main.SetSelectedTower(-1); // Deselect tower after building
     }
 
 }

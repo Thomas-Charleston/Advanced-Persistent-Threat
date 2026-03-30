@@ -16,7 +16,7 @@ public class GameResultDetails : MonoBehaviour
     {
         uptimeText.text = "Uptime: " + Convert.ToInt16(upTimeScript.time).ToString() + "s";
         modifiersText.text = "Modifiers: " + modifiers.mapType + ", " + modifiers.speedType + ", " + modifiers.travelType + ", " + modifiers.accessType + ", " + modifiers.connectionType + ", PenTest: " + modifiers.penTest.ToString();
-        netDataText.text = "Net Data: ";
+        netDataText.text = "Net Data: " + DataValue.main.data.ToString() + " bits";
     }
 
     public void ContinueFromOver()
