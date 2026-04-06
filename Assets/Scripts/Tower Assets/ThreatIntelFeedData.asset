@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ThreatIntelFeedData
   m_EditorClassIdentifier: Assembly-CSharp::PassiveData
   towerName: ThreatIntelFeed
-  cost: 30
-  baseUpgradeCost: 30
+  cost: 90
+  baseUpgradeCost: 40
   previewPrefab: {fileID: 7759037704387113772, guid: a6202667019f1a2429c7962adbcfa024, type: 3}
   prefab: {fileID: 8434750114742307495, guid: 428a8aead71ac5d43ac3206e48ac3e99, type: 3}

@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PassiveData
   towerName: Backup
   cost: 50
-  baseUpgradeCost: 30
+  baseUpgradeCost: 40
   previewPrefab: {fileID: 3366237105260260312, guid: f5eaf91b1fab161479da23d4d32c9f75, type: 3}
   prefab: {fileID: 8434750114742307495, guid: 69d5a8039bb39314b84514b8769b6e64, type: 3}

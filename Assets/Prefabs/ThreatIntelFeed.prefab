@@ -886,4 +886,4 @@ MonoBehaviour:
   upgradeUI: {fileID: 7611613077336985331}
   upgradeButton: {fileID: 5607253724324441179}
   baseUpgradeCost: 0
-  rangeIndicator: {fileID: 0}
+  rangeIndicator: {fileID: 110256476359527045}

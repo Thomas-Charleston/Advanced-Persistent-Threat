@@ -899,4 +899,4 @@ MonoBehaviour:
   targetingRange: 3
   roationSpeed: 5
   fireRate: 1
-  canTarget: 3
+  canTarget: 3495

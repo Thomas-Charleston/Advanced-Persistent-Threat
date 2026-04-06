@@ -3,7 +3,7 @@ using TMPro;
 public class UpTime : MonoBehaviour
 {
     public float time;
-    public float gameWinTime = 60f;
+    public float gameWinTime = 480f;
 
     [Header("References")]
     [SerializeField] private TMP_Text upTimeText;

@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PassiveData
   towerName: IntrustionDetectionSystem
   cost: 30
-  baseUpgradeCost: 20
+  baseUpgradeCost: 65
   previewPrefab: {fileID: 7759037704387113772, guid: c025a7a60d01b7345a082a3b80e78f98, type: 3}
   prefab: {fileID: 8434750114742307495, guid: 98a6b682403ee84449b22103268984ce, type: 3}

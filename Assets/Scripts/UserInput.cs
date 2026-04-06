@@ -168,6 +168,7 @@ public class UserInput : MonoBehaviour
 
 
                         startCommandInputField.Select();
+                        PlayerPrefs.SetString("PlayFabUsername", username);
                         Debug.Log("Login completed successfully");
                     }
                     else

@@ -1,10 +1,14 @@
 using UnityEngine;
 using UnityEngine.Accessibility;
+using TMPro;
 
 public class EnemyMovement : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private Rigidbody2D rb;
+    // public VolumeSettings volumeSettings;
+    [SerializeField] private AudioSource enemyReachesEndSource;
+    // [SerializeField] private TMP_Text consoleText;
 
     [Header("Attributes")]
     [SerializeField] private float speed = 1f;
@@ -58,6 +62,9 @@ public class EnemyMovement : MonoBehaviour
             if (pathIndex == LevelManager.main.path.Length) // Enemy reaches end of path
             {
                 EnemySpawner.onEnemyDestroy.Invoke();
+                if (enemyReachesEndSource != null && enemyReachesEndSource.clip != null){
+                    AudioSource.PlayClipAtPoint(enemyReachesEndSource.clip, transform.position);
+                }
                 Destroy(gameObject);
 
                 if (abilities != null && abilities.Length > 0)
@@ -92,6 +99,7 @@ public class EnemyMovement : MonoBehaviour
         speed = data.speed;
         reputationDamage = data.reputationDamage;
         dataDamage = data.dataDamage;
+        // consoleText.text = $"$ ${data.tags.ToString()} incoming!";
     }
 
     public void SetSpeedMultiplier(float multiplier)

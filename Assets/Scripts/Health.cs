@@ -3,6 +3,9 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
+    [Header("References")]
+    [SerializeField] private AudioSource enemyDestroyedSource;
+
     [Header("Attributes")]
     [SerializeField] private int hitPoints = 2;
     [SerializeField] private int currencyWorth = 5;
@@ -44,7 +47,8 @@ public class Health : MonoBehaviour
             {
                 ability.OnDeath();
             }
-            
+
+            AudioSource.PlayClipAtPoint(enemyDestroyedSource.clip, transform.position);
             EnemySpawner.onEnemyDestroy.Invoke();
             LevelManager.main.IncreaseCurrency(currencyWorth);
             isDestroyed = true;

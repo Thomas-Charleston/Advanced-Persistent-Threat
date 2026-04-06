@@ -26,8 +26,8 @@ public class LevelManager : MonoBehaviour
 
     void Start()
     {
-        currency = 50;
-        reputation = 100;
+        currency = 30; // start money
+        reputation = 100; // start rep
         reputationText.text = reputation.ToString() + "/100";
     }
 

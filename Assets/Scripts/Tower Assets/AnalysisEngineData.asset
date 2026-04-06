@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: AnalysisEngineData
   m_EditorClassIdentifier: Assembly-CSharp::TurretData
   towerName: AnalysisEngine
-  cost: 30
-  baseUpgradeCost: 10
+  cost: 60
+  baseUpgradeCost: 20
   previewPrefab: {fileID: 7759037704387113772, guid: 644c2b397f6b2c149b8dd86439ddc589, type: 3}
   prefab: {fileID: 8434750114742307495, guid: f1e5cb556fc9c844b98ba8f145242b69, type: 3}
   range: 3

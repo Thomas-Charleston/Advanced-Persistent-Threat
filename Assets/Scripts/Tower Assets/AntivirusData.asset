@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TurretData
   towerName: Antivirus
   cost: 30
-  baseUpgradeCost: 10
+  baseUpgradeCost: 40
   previewPrefab: {fileID: 7759037704387113772, guid: ad289f8cc8847954285f740e5f5b468c, type: 3}
   prefab: {fileID: 8434750114742307495, guid: 731761c4dea875f40b34824ab71ab6f8, type: 3}
   range: 3

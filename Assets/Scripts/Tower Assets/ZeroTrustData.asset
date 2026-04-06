@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ZeroTrustData
   m_EditorClassIdentifier: Assembly-CSharp::PassiveData
   towerName: ZeroTrustGateway
-  cost: 30
-  baseUpgradeCost: 30
+  cost: 55
+  baseUpgradeCost: 50
   previewPrefab: {fileID: 7759037704387113772, guid: 14848738b9a9b224ba90e703121d1a1a, type: 3}
   prefab: {fileID: 8434750114742307495, guid: 69f800d2ef3ce4b428118c062d8c9515, type: 3}

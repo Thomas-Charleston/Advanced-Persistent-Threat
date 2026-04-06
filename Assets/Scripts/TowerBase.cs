@@ -42,7 +42,7 @@ public class TowerBase : MonoBehaviour
 
     protected int CalculateCost()
     {
-        return Mathf.RoundToInt(baseUpgradeCost * Mathf.Pow(level, 0.8f));
+        return Mathf.RoundToInt(baseUpgradeCost * Mathf.Pow(level, 1.2f));
     }
 
     public virtual void OpenUpgradeUI()

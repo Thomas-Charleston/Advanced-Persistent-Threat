@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: EncryptionData
   m_EditorClassIdentifier: Assembly-CSharp::PassiveData
   towerName: Encryption
-  cost: 30
-  baseUpgradeCost: 20
+  cost: 50
+  baseUpgradeCost: 40
   previewPrefab: {fileID: 7759037704387113772, guid: 72872c6951fbe0d43b8455a007a0bddc, type: 3}
   prefab: {fileID: 8434750114742307495, guid: 8c08ab4651ea4c4429968bc1ba28ba87, type: 3}

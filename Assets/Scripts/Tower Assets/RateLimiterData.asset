@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: RateLimiterData
   m_EditorClassIdentifier: Assembly-CSharp::PassiveData
   towerName: RateLimiter
-  cost: 30
-  baseUpgradeCost: 20
+  cost: 80
+  baseUpgradeCost: 40
   previewPrefab: {fileID: 7759037704387113772, guid: 2bed26d5cc868584bbc67d6ce9203ba2, type: 3}
   prefab: {fileID: 8434750114742307495, guid: 01790575ea8b0994eadff38789f919f4, type: 3}

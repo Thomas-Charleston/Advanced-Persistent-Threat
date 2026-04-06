@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using System.Collections;
 using Unity.VisualScripting;
+using TMPro;
 
 [System.Serializable]
 public class EnemyType // ENEMY SPAWN DATA
@@ -16,6 +17,7 @@ public class EnemySpawner : MonoBehaviour
     [Header("References")]
     // [SerializeField] private GameObject[] enemyPrefabs;
     [SerializeField] private EnemyType[] enemyTypes;
+    [SerializeField] private TMP_Text consoleText;
 
     [Header("Attributes")]
     [SerializeField] private int baseEnemies = 8;
@@ -99,6 +101,7 @@ public class EnemySpawner : MonoBehaviour
         {
             obj.GetComponent<Health>().Initialize(type.data);
             obj.GetComponent<EnemyMovement>().Initialize(type.data);
+            consoleText.text = $"$ {type.data.tags.ToString()} incoming!";
         }
     }
 
@@ -115,16 +118,16 @@ public class EnemySpawner : MonoBehaviour
     public EnemyType GetTypeToSpawn()
     {
         enemiesSpawned++;
-        if ( enemiesSpawned <= 10-05 ) return enemyTypes[1]; // Values likely need adjusting
-        else if ( enemiesSpawned <= 20-10) return enemyTypes[2];
-        else if (enemiesSpawned <= 30-15) return enemyTypes[3];
-        else if (enemiesSpawned <= 40) return enemyTypes[4];
-        else if (enemiesSpawned <= 50) return enemyTypes[5];
-        else if (enemiesSpawned <= 60) return enemyTypes[6];
-        else if (enemiesSpawned <= 70) return enemyTypes[7];
-        else if (enemiesSpawned <= 80) return enemyTypes[8];
-        else if (enemiesSpawned <= 90) return enemyTypes[9];
-        else if (enemiesSpawned <= 100) return enemyTypes[10];
+        if ( enemiesSpawned <= 8) return enemyTypes[1]; // Values likely need adjusting
+        else if ( enemiesSpawned <= 16) return enemyTypes[2];
+        else if (enemiesSpawned <= 24) return enemyTypes[3];
+        else if (enemiesSpawned <= 32) return enemyTypes[4];
+        else if (enemiesSpawned <= 40) return enemyTypes[5];
+        else if (enemiesSpawned <= 48) return enemyTypes[6];
+        else if (enemiesSpawned <= 56) return enemyTypes[7];
+        else if (enemiesSpawned <= 64) return enemyTypes[8];
+        else if (enemiesSpawned <= 72) return enemyTypes[9];
+        else if (enemiesSpawned <= 80) return enemyTypes[10];
         else if (enemyTypes[11] == null) return enemyTypes[10]; // Checks if more enemy types exist
         return enemyTypes[11];
     }
@@ -132,7 +135,7 @@ public class EnemySpawner : MonoBehaviour
     private int EnemiesPerWave()
     {
         return Mathf.RoundToInt(baseEnemies * Mathf.Pow(currentWave, difficultyScalingFactor));
-    }
+    } 
 
     private void EnemyDestroyed()
     {

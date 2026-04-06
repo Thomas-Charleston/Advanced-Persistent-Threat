@@ -147,12 +147,12 @@ public class Turret : TowerBase
 
     private float CalculateFireRate()
     {
-        return bpsBase * Mathf.Pow(level, 0.6f);
+        return bpsBase * Mathf.Pow(level, 0.3f);
     }
 
     private float CalculateRange()
     {
-        return targetingRangeBase * Mathf.Pow(level, 0.4f);
+        return targetingRangeBase * Mathf.Pow(level, 0.3f);
     }
 
     void OnDrawGizmosSelected()

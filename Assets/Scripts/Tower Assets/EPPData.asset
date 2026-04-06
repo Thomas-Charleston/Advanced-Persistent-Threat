@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: EppData
   m_EditorClassIdentifier: Assembly-CSharp::TurretData
   towerName: EndpointProtectionPlatform
-  cost: 50
-  baseUpgradeCost: 30
+  cost: 80
+  baseUpgradeCost: 60
   previewPrefab: {fileID: 7759037704387113772, guid: 702c75eb296dae14eb356237a58f48e9, type: 3}
   prefab: {fileID: 8434750114742307495, guid: 7fe889e092352b94988a99b8f6dafb55, type: 3}
   range: 1

@@ -883,18 +883,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad26c60c0ac18eb44b6f0934f0a7998f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  upgradeUI: {fileID: 7611613077336985331}
+  upgradeButton: {fileID: 5607253724324441179}
+  baseUpgradeCost: 10
+  rangeIndicator: {fileID: 110256476359527045}
   rotationPoint: {fileID: 3044000554515144450}
   enemyMask:
     serializedVersion: 2
     m_Bits: 128
   bulletPrefab: {fileID: 404108138721791843, guid: eea7d1ea8d140474e947a57cbbc6309b, type: 3}
   firePoint: {fileID: 7104430132273056164}
-  upgradeUI: {fileID: 7611613077336985331}
-  upgradeButton: {fileID: 5607253724324441179}
-  rangeIndicator: {fileID: 110256476359527045}
   abilities:
   - {fileID: 0}
+  dmg: 0
   targetingRange: 3
   roationSpeed: 5
   fireRate: 1
-  baseUpgradeCost: 10
+  canTarget: 2307
